@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
+  - 114: {fileID: 11483386}
+  - 136: {fileID: 13635450}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -73,8 +75,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .400000006, y: .5, z: .400000006}
+  m_LocalPosition: {x: -1.53900003, y: -.100000001, z: -.469999999}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 400002}
   m_RootOrder: 0
@@ -88,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.7649231, y: 3.25786257, z: -74.3138885}
+  m_LocalPosition: {x: -8.97999954, y: 1.63999999, z: -22.9400005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -315,6 +317,17 @@ MonoBehaviour:
 --- !u!1002 &11400007
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!114 &11483386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181c9088628eb7348b58399d7f1af54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -325,6 +338,19 @@ Behaviour:
 --- !u!1002 &12400001
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!136 &13635450
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 1.1920929e-07, y: 0, z: -1.78813934e-07}
 --- !u!143 &14300000
 CharacterController:
   m_ObjectHideFlags: 1
@@ -333,7 +359,7 @@ CharacterController:
   m_GameObject: {fileID: 100002}
   serializedVersion: 2
   m_Height: 2
-  m_Radius: .400000006
+  m_Radius: .5
   m_SlopeLimit: 45
   m_StepOffset: .400000006
   m_SkinWidth: .0500000007

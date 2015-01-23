@@ -113,6 +113,7 @@ GameObject:
   - 33: {fileID: 3326706}
   - 136: {fileID: 13626706}
   - 23: {fileID: 2326706}
+  - 114: {fileID: 11420450}
   m_Layer: 2
   m_Name: Display
   m_TagString: Untagged
@@ -127,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.8000002, y: 1.90999997, z: -21}
+  m_LocalPosition: {x: -10.5100002, y: 1.53999996, z: -23.3999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426708}
@@ -308,6 +309,17 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126710}
   m_Enabled: 1
+--- !u!114 &11420450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181c9088628eb7348b58399d7f1af54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11426706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,9 +441,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126718}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: .5
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 	public enum role
 	{
 		spy, handler,
-	}
+	} 
 	public role myRole;
 	public Camera[] secCams;
 	public GameObject theSpy;

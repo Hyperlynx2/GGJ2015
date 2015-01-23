@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/3 - AgentLobby.unity
-  - enabled: 1
     path: Assets/Scenes/3 - HandlerLobby.unity
+  - enabled: 1
+    path: Assets/Scenes/3 - AgentLobby.unity
   - enabled: 1
     path: Assets/Scenes/4 - MainGame.unity

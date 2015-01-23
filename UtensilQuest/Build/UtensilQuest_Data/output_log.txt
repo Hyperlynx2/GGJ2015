@@ -16,7 +16,7 @@ Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\
 Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.045 seconds
+- Completed reload, in  0.042 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -31,11 +31,11 @@ print
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-UnloadTime: 2.780594 ms
+UnloadTime: 3.364339 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 175.
-Total: 0.456304 ms (FindLiveObjects: 0.011118 ms CreateObjectMapping: 0.006414 ms MarkObjects: 0.116749 ms  DeleteObjects: 0.002565 ms)
+Total: 0.549960 ms (FindLiveObjects: 0.010263 ms CreateObjectMapping: 0.007697 ms MarkObjects: 0.131716 ms  DeleteObjects: 0.003421 ms)
 
 ChangeScene
 debug.log
@@ -46,15 +46,13 @@ print
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-UnloadTime: 1.156799 ms
+UnloadTime: 0.504201 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 195.
-Total: 2.039473 ms (FindLiveObjects: 0.042337 ms CreateObjectMapping: 0.036350 ms MarkObjects: 0.570915 ms  DeleteObjects: 0.018816 ms)
+Total: 0.567494 ms (FindLiveObjects: 0.009835 ms CreateObjectMapping: 0.008125 ms MarkObjects: 0.159086 ms  DeleteObjects: 0.004276 ms)
 
-UnloadTime: 1.435628 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 359.
-Total: 0.509333 ms (FindLiveObjects: 0.027369 ms CreateObjectMapping: 0.008980 ms MarkObjects: 0.120170 ms  DeleteObjects: 0.011974 ms)
+The server has disconnected from the client. Most likely the server has shut down.
+ 
+(Filename:  Line: 745)
 

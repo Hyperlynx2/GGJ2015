@@ -27,7 +27,7 @@ PlayerSettings:
   m_Stereoscopic3D: 0
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
-  displayResolutionDialog: 1
+  displayResolutionDialog: 2
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
   allowedAutorotateToLandscapeRight: 1
@@ -55,8 +55,8 @@ PlayerSettings:
   xboxEnableFitness: 0
   visibleInBackground: 1
   macFullscreenMode: 2
-  d3d9FullscreenMode: 1
-  d3d11ForceExclusiveMode: 0
+  d3d9FullscreenMode: 0
+  d3d11ForceExclusiveMode: 1
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -248,6 +248,6 @@ PlayerSettings:
   tizenMicrophonePermissions: 0
   stvDeviceAddress: 
   firstStreamedLevelWithResources: 0
-  unityRebuildLibraryVersion: 0
+  unityRebuildLibraryVersion: 9
   unityForwardCompatibleVersion: 39
   unityStandardAssetsVersion: 0

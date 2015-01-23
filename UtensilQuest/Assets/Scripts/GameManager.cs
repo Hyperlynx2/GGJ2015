@@ -12,9 +12,13 @@ public class GameManager : MonoBehaviour
 	public Camera[] secCams;
 	public GameObject theSpy;
 	private int camIndex = 0;
+	public GameObject OculusPlayer;
+	public GameObject NonOcPlayer;
+	public Transform spawnPoint;
 	// Use this for initialization
 	void Start () 
 	{
+
         if(Network.isServer)
         {
             myRole = role.spy;
@@ -25,28 +29,66 @@ public class GameManager : MonoBehaviour
         }
 		//if I'm not the spy, disable the spy.
 		if(myRole == role.handler)
+		//our server spawns in the player
+		//if(Network.isServer)
+		//{
+		//spawn in our player
+			//if oculus
+			//{
+				//theSpy = Network.Instantiate (OculusPlayer, spawnPoint.position, spawnPoint.rotation, 0) as GameObject;
+			//}
+			//else
+			//{
+				//theSpy = Network.Instantiate (NonOcPlayer, spawnPoint.position, spawnPoint.rotation, 0) as GameObject;
+				theSpy = Instantiate(NonOcPlayer, spawnPoint.position, spawnPoint.rotation) as GameObject; //TEMP!!
+			//}
+		//}
+		if(theSpy == null)
 		{
-			//theSpy.SetActive(false);
-			theSpy.GetComponent<OVRGamepadController>().enabled = false;
-			theSpy.GetComponent<OVRPlayerController>().enabled = false;
-			theSpy.GetComponent<OVRMainMenu>().enabled = false;
-			theSpy.GetComponentInChildren<OVRCameraRig>().enabled = false;
-			theSpy.GetComponentInChildren<OVRManager>().enabled = false;
-			theSpy.GetComponentInChildren<OVRScreenFade>().enabled = false;
-			foreach (Camera cam in theSpy.GetComponentsInChildren<Camera>())
+			theSpy = GameObject.Find("Player(Clone)");
+		}
+		else
+		{
+			if(myRole == role.handler) //if I'm not the spy, disable the spy. Then set up the security cams.
 			{
-				cam.enabled = false;
+				//if oculus
+				//theSpy.SetActive(false);
+				/*theSpy.GetComponent<OVRGamepadController>().enabled = false;
+				theSpy.GetComponent<OVRPlayerController>().enabled = false;
+				theSpy.GetComponent<OVRMainMenu>().enabled = false;
+				theSpy.GetComponentInChildren<OVRCameraRig>().enabled = false;
+				theSpy.GetComponentInChildren<OVRManager>().enabled = false;
+				theSpy.GetComponentInChildren<OVRScreenFade>().enabled = false;*/
+				//else
+				//{
+				theSpy.GetComponent<MouseLook>().enabled = false;
+				theSpy.GetComponent<CharacterMotor>().enabled = false;
+				theSpy.GetComponent<FPSInputController>().enabled = false;
+				//}
+				//turn off the player's cameras
+				foreach (Camera cam in theSpy.GetComponentsInChildren<Camera>())
+				{
+					cam.enabled = false;
+				}
+				//start with the cameras off.
+				foreach(Camera cam in secCams)
+				{
+					cam.enabled = false;
+					cam.GetComponent<AudioListener>().enabled = false;
+				}
+				//turn the first one on.
+				secCams [0].enabled = true;
+				secCams [0].GetComponent<AudioListener>().enabled = true;
+			}
+			else //I'm the spy, so turn off the security cameras for me.
+			{
+				foreach(Camera cam in secCams)
+				{
+					cam.enabled = false;
+					cam.GetComponent<AudioListener>().enabled = false;
+				}
 			}
 		}
-		//start with the cameras off.
-		foreach(Camera cam in secCams)
-		{
-			cam.enabled = false;
-			cam.GetComponent<AudioListener>().enabled = false;
-		}
-		//turn the first one on.
-		secCams [0].enabled = true;
-		secCams [0].GetComponent<AudioListener>().enabled = true;
 	}
 	
 	// Update is called once per frame

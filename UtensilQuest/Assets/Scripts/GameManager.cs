@@ -196,4 +196,10 @@ public class GameManager : MonoBehaviour
         Network.CloseConnection(connectingPlayer, true);
         Debug.Log("I just kicked: " + connectingPlayer.ipAddress);
     }
+
+    //Client disconnection - just go back to intro scene
+    void OnDisconnectedFromServer(NetworkDisconnection disconnect)
+    {
+        Application.LoadLevel("1-Splash");
+    }
 }

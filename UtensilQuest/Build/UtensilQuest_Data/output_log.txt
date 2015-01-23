@@ -12,7 +12,24 @@ Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\
 Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.042 seconds
+- Completed reload, in  0.055 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\System.dll (this message is harmless)
+ChangeScene
+debug.log
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+print
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+UnloadTime: 3.305751 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 171.
+Total: 0.590159 ms (FindLiveObjects: 0.017106 ms CreateObjectMapping: 0.011118 ms MarkObjects: 0.144546 ms  DeleteObjects: 0.003421 ms)
+

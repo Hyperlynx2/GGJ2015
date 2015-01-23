@@ -25,6 +25,13 @@ public class AgentStartGame : MonoBehaviour
     void OnPlayerConnected(NetworkPlayer newPlayer)
     {
         uiNumPlayersConnected++;
+
+        if (uiNumPlayersConnected > 4)
+        {
+            Network.CloseConnection(newPlayer, true);
+            return;
+        }
+
         PlayersConnectedText.text = "Number of Connected Handlers: " + uiNumPlayersConnected;
     }
 

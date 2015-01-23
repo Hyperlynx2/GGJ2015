@@ -2,22 +2,26 @@ Initialize engine version: 4.6.1f1 (d1db7a1b5196)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GT 640M      (ID=0xfd2)
-    Vendor:   NVIDIA
-    VRAM:     1990 MB
+    Renderer: Intel(R) HD Graphics 4600 (ID=0x416)
+    Vendor:   Intel
+    VRAM:     896 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Ed\Desktop\GGJ2015\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Ed\Desktop\GGJ2015\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Ed\Desktop\GGJ2015\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Ed\Desktop\GGJ2015\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Ed\Desktop\GGJ2015\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Ed\Desktop\GGJ2015\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.044 seconds
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.045 seconds
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
-Platform assembly: C:\Users\Ed\Desktop\GGJ2015\UtensilQuest\Build\UtensilQuest_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Ed\Desktop\GGJ2015\UtensilQuest\Build\UtensilQuest_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\GGJ2015\repo\UtensilQuest\Build\UtensilQuest_Data\Managed\System.dll (this message is harmless)
 ChangeScene
 debug.log
  
@@ -27,11 +31,11 @@ print
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-UnloadTime: 2.964676 ms
+UnloadTime: 2.780594 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 171.
-Total: 0.574283 ms (FindLiveObjects: 0.007139 ms CreateObjectMapping: 0.007139 ms MarkObjects: 0.134311 ms  DeleteObjects: 0.003123 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 175.
+Total: 0.456304 ms (FindLiveObjects: 0.011118 ms CreateObjectMapping: 0.006414 ms MarkObjects: 0.116749 ms  DeleteObjects: 0.002565 ms)
 
 ChangeScene
 debug.log
@@ -42,23 +46,15 @@ print
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-UnloadTime: 0.386871 ms
+UnloadTime: 1.156799 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 177.
-Total: 0.514043 ms (FindLiveObjects: 0.007139 ms CreateObjectMapping: 0.007139 ms MarkObjects: 0.124941 ms  DeleteObjects: 0.002677 ms)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 195.
+Total: 2.039473 ms (FindLiveObjects: 0.042337 ms CreateObjectMapping: 0.036350 ms MarkObjects: 0.570915 ms  DeleteObjects: 0.018816 ms)
 
-UnloadTime: 0.489501 ms
+UnloadTime: 1.435628 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 339.
-Total: 0.598379 ms (FindLiveObjects: 0.016063 ms CreateObjectMapping: 0.008924 ms MarkObjects: 0.138773 ms  DeleteObjects: 0.010263 ms)
-
-Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 359.
+Total: 0.509333 ms (FindLiveObjects: 0.027369 ms CreateObjectMapping: 0.008980 ms MarkObjects: 0.120170 ms  DeleteObjects: 0.011974 ms)
 

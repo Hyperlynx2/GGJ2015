@@ -5,26 +5,31 @@ public class AgentBehaviour : MonoBehaviour
 {
 	public GameObject[] inventory;
 	public Texture[] invIcons;
-	private int currentSlot = 0;
+	public int currentSlot = 0;
 	// Use this for initialization
 	void Start () 
 	{
-	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-	
+		
 	}
 
-	void OnCollisionEnter(Collider hit)
+	void OnTriggerEnter(Collider hit)
 	{
+		Debug.Log (hit.name);
 		//check what we hit is in fact an item
-		if(hit.GetComponent<Item>())
+		if(hit.gameObject.GetComponent<Item>())
 		{
 			inventory[currentSlot] = hit.gameObject;
-
+			invIcons[currentSlot] = hit.gameObject.GetComponent<Item>().icon;
+			if(currentSlot < inventory.Length)
+			{
+				currentSlot ++;
+			}
 		}
 	}
 }

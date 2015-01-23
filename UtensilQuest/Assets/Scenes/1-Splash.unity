@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c35b6783034a7b458659c1110ecaab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 2-SelectPlayerType
+  sceneName: 2-SelectPlayer
 --- !u!114 &304516467
 MonoBehaviour:
   m_ObjectHideFlags: 0

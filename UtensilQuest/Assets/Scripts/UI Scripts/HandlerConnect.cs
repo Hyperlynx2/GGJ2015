@@ -33,7 +33,7 @@ public class HandlerConnect : MonoBehaviour {
         ConnectedNotification.text = "Please wait for the game to start...";
         ErrorNotifaction.text = "";
 
-        ConnectButton.enabled = false;
+        ConnectButton.interactable = false;
     }
 
     void OnDisconnectedFromServer(NetworkDisconnection disconnect)
@@ -42,7 +42,7 @@ public class HandlerConnect : MonoBehaviour {
         ConnectedNotification.text = "You were disconnected (" + disconnect.ToString() + ") - Please reconnect";
         ErrorNotifaction.text = "";
 
-        ConnectButton.enabled = true;
+        ConnectButton.interactable = true;
     }
 
     void OnFailedToConnect(NetworkConnectionError err)

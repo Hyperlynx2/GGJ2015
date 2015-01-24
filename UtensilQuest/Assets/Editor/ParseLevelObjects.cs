@@ -42,7 +42,7 @@ public class ParseLevelObjects : MonoBehaviour
         GameObject[] goList = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject obj in goList)
         {
-            if (obj.name.Contains("SecurityCam-"))
+            if (obj.name.Contains("SecurityCam-Top"))
             {
                 AttachSecurityCamera(obj, bKeepValues);
             }
@@ -142,7 +142,7 @@ public class ParseLevelObjects : MonoBehaviour
             scr.waitFor = 1;
         }
 
-        string cameraID = obj.name.Substring("SecurityCam-".Length, 3);
+        string cameraID = obj.name.Substring("SecurityCam-Top-".Length, 3);
         Debug.Log(cameraID);
         Debug.Log("SecurityCamera-MiniMap-" + cameraID.ToString());
         GameObject miniMapIcon = GameObject.Find("SecurityCamera-MinMap-" + cameraID.ToString());

@@ -102,14 +102,14 @@ namespace HackingGame
 
 			PathPiece currentPiece = NewPiece();
 
+			path.Push(currentPiece);
+
 			currentPiece.allowRight = true;
-			_grid[currentPiece.row, currentPiece.col] = currentPiece;
+		_grid[currentPiece.row, currentPiece.col] = currentPiece;
 
 			bool reachedStart = false;
 			while(!reachedStart)
 			{
-				path.Push(currentPiece);
-
 				PathPiece newPiece = NewPiece();
 				newPiece.row = currentPiece.row;
 				newPiece.col = currentPiece.col;
@@ -159,6 +159,8 @@ namespace HackingGame
 						newPiece.allowLeft = true;
 						reachedStart = true;
 					}
+
+					path.Push(currentPiece);
 				}
 				else
 				{
@@ -177,7 +179,6 @@ namespace HackingGame
 						print("backtracking");
 						currentPiece = path.Pop();
 					}
-
 				}
 			}
 

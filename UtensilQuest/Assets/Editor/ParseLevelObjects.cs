@@ -71,6 +71,11 @@ public class ParseLevelObjects : MonoBehaviour
             GameObject enemyObj = PrefabUtility.InstantiatePrefab(enemyPrefab) as GameObject;
 
             Enemy scr = enemyObj.GetComponent<Enemy>();
+
+            //Remove any null transforms in the area
+            enemyPath.RemoveAll(item => item == null);
+
+
             scr.waypoints = enemyPath.ToArray();
 
 

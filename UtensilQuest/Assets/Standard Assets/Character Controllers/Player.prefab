@@ -333,10 +333,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   invIcons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  invGUI: []
   currentSlot: 0
 --- !u!124 &12400000
 Behaviour:

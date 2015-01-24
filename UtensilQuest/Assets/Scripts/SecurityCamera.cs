@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 //Controls the security camera, pans left and right with a delay and the ends.
 public class SecurityCamera : MonoBehaviour 
@@ -9,6 +10,8 @@ public class SecurityCamera : MonoBehaviour
 	public float rotSpeed;
 	private float waitTimer;
 	public int waitFor;
+
+    public Image miniMapImage;
 
 	public enum rotDirection
 	{

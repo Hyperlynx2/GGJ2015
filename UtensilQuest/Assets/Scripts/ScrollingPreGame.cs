@@ -21,5 +21,10 @@ public class ScrollingPreGame : MonoBehaviour
 		{
 			Application.LoadLevel(Application.loadedLevel+1);
 		}
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            Application.LoadLevel(Application.loadedLevel + 1);
+        }
 	}
 }

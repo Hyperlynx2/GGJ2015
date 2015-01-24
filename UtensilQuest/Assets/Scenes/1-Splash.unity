@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c35b6783034a7b458659c1110ecaab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 2-SelectPlayer
+  sceneName: 1.5-PreGame
 --- !u!114 &304516467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +276,33 @@ RectTransform:
   m_AnchoredPosition: {x: .00248718262, y: 0}
   m_SizeDelta: {x: 742.01001, y: 387}
   m_Pivot: {x: .5, y: .5}
+--- !u!1 &451956980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 451956981}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &451956981
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 451956980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 414.674988, y: 145.381256, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &1026658494
 GameObject:
   m_ObjectHideFlags: 0

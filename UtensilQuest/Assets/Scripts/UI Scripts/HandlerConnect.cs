@@ -24,7 +24,14 @@ public class HandlerConnect : MonoBehaviour {
     [RPC]
     void RPC_OnServerStartGame(string someInfo)
     {
-        Application.LoadLevel("4 - Test Level");
+        Application.LoadLevel(PlayerPrefs.GetString("LEVEL_TO_LOAD"));
+    }
+
+    [RPC]
+    void RPC_SetLevelToLoad(string levelName)
+    {
+        PlayerPrefs.SetString("LEVEL_TO_LOAD", levelName);
+        Debug.Log(PlayerPrefs.GetString("LEVEL_TO_LOAD"));
     }
 
     void OnConnectedToServer()

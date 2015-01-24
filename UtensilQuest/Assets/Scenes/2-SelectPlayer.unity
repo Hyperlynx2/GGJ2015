@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c35b6783034a7b458659c1110ecaab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 3 - AgentLobby
+  sceneName: 2.5 - AgentLevelSelect
 --- !u!1 &1182037637
 GameObject:
   m_ObjectHideFlags: 0

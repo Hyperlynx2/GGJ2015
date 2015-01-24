@@ -19,7 +19,7 @@ public class AgentStartGame : MonoBehaviour
     public void OnStartButtonClicked()
     {
         networkView.RPC("RPC_OnServerStartGame", RPCMode.Others, null);
-        Application.LoadLevel("4 - Test Level");
+        Application.LoadLevel(PlayerPrefs.GetString("LEVEL_TO_LOAD"));
     }
 
     void OnPlayerConnected(NetworkPlayer newPlayer)
@@ -33,6 +33,8 @@ public class AgentStartGame : MonoBehaviour
         }
 
         PlayersConnectedText.text = "Number of Connected Handlers: " + uiNumPlayersConnected;
+        networkView.RPC("RPC_SetLevelToLoad", RPCMode.Others, PlayerPrefs.GetString("LEVEL_TO_LOAD"));
+        //Send the new level to the player
     }
 
     void OnPlayerDisconnected(NetworkPlayer newPlayer)
@@ -44,4 +46,6 @@ public class AgentStartGame : MonoBehaviour
     //Fix RPC errors
     [RPC]
     void RPC_OnServerStartGame() { }
+    [RPC]
+    void RPC_SetLevelToLoad(string levelName) { }
 }

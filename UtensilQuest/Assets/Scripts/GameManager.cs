@@ -45,7 +45,9 @@ public class GameManager : MonoBehaviour
 			foreach (SecurityCamera cam in secCams)
 			{
 				cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
-				cam.GetComponent<AudioListener>().enabled = false;
+                cam.GetComponent<AudioListener>().enabled = false;
+                cam.GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(false);
+                //cam.GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(false);
 			}
 			Destroy (GameObject.Find("CameraGUI"));
 			//spawn the pickups and food
@@ -59,16 +61,19 @@ public class GameManager : MonoBehaviour
         else  //I'm the handler, set up the cameras
         {
             myRole = role.handler;
+			Destroy (GameObject.Find("PlayerGUI"));
 			//start with the cameras off.
 			foreach (SecurityCamera cam in secCams)
 			{
 				cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
-				cam.GetComponent<AudioListener>().enabled = false;
+                cam.GetComponent<AudioListener>().enabled = false;
+                cam.GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(false);
                 //cam.GetComponent<SecurityCamera>().miniMapImage.enabled = false;
 			}
 			//turn the first one on.
             secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[0].GetComponent<AudioListener>().enabled = true;
+            secCams[0].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(false);
             //secCams[0].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
     }
@@ -111,11 +116,11 @@ public class GameManager : MonoBehaviour
 		}
 
         //press tab to cycle through the cameras
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
+		if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
             secCams[camIndex].GetComponent<AudioListener>().enabled = false;
-            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
+            secCams[camIndex].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(false);
             //cycle through as many cameras as we have.
             if (camIndex < secCams.Count - 1)
             {
@@ -127,7 +132,7 @@ public class GameManager : MonoBehaviour
             }
 			secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[camIndex].GetComponent<AudioListener>().enabled = true;
-            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
+            secCams[camIndex].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(true);
 			if(camIndex < 10)
 			{
 				CurCamText.text = "0"+camIndex.ToString();
@@ -137,11 +142,11 @@ public class GameManager : MonoBehaviour
 				CurCamText.text = camIndex.ToString();
 			}
         }
-		if(Input.GetKeyDown(KeyCode.LeftAlt))
+		if(Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightArrow))
 		{
 			secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
             secCams[camIndex].GetComponent<AudioListener>().enabled = false;
-            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
+            secCams[camIndex].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(false);
 			//cycle through as many cameras as we have.
 			if (camIndex > 0)
 			{
@@ -153,7 +158,7 @@ public class GameManager : MonoBehaviour
 			}
             secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[camIndex].GetComponent<AudioListener>().enabled = true;
-            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
+            secCams[camIndex].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(true);
 			if(camIndex < 10)
 			{
 				CurCamText.text = "0"+camIndex.ToString();
@@ -334,12 +339,12 @@ public class GameManager : MonoBehaviour
 		if(secCams.Count - 1 >= CamNumber && secCams[CamNumber] != null)
 		{
 			secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
-	        secCams[camIndex].GetComponent<AudioListener>().enabled = false;
-            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
+            secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+            secCams[camIndex].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(false);
 	        camIndex = CamNumber;
 			secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
-	        secCams[camIndex].GetComponent<AudioListener>().enabled = true;
-            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
+            secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+            secCams[camIndex].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(true);
 			if(camIndex < 10)
 			{
 				CurCamText.text = "0"+camIndex.ToString();

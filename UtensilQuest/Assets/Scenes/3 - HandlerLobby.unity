@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70869ff4962ba4448633c46d6e7b46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IPBox: {fileID: 530166140}
+  IPBox: {fileID: 61878165}
   ConnectedNotification: {fileID: 383246322}
   ErrorNotifaction: {fileID: 690366339}
   ConnectButton: {fileID: 271228304}

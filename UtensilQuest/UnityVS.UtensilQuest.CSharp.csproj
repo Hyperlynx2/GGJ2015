@@ -79,8 +79,10 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+    <Compile Include="Assets\Scripts\AgentBehaviour.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\SecurityCamera.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\AgentStartGame.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\ChangeScene.cs" />

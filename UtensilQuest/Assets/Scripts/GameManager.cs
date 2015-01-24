@@ -18,17 +18,16 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        if (Network.isServer)
+        /*if (Network.isServer)
         {
             myRole = role.spy;
         }
         else
         {
             myRole = role.handler;
-        }
+        }*/
         //if I'm not the spy, disable the spy.
-        if (myRole == role.handler)
+        //if (myRole == role.handler)
             //our server spawns in the player
             //if(Network.isServer)
             //{

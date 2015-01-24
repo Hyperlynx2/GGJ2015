@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine.UI;
+
 public class AgentStartGame : MonoBehaviour
 {
+    public Text PlayersConnectedText;
+
+    private int uiNumPlayersConnected = 0;
 
     void Start()
     {
@@ -15,6 +20,25 @@ public class AgentStartGame : MonoBehaviour
     {
         networkView.RPC("RPC_OnServerStartGame", RPCMode.Others, null);
         Application.LoadLevel("4 - MainGame");
+    }
+
+    void OnPlayerConnected(NetworkPlayer newPlayer)
+    {
+        uiNumPlayersConnected++;
+
+        if (uiNumPlayersConnected > 4)
+        {
+            Network.CloseConnection(newPlayer, true);
+            return;
+        }
+
+        PlayersConnectedText.text = "Number of Connected Handlers: " + uiNumPlayersConnected;
+    }
+
+    void OnPlayerDisconnected(NetworkPlayer newPlayer)
+    {
+        uiNumPlayersConnected--;
+        PlayersConnectedText.text = "Number of Connected Handlers: " + uiNumPlayersConnected;
     }
 
     //Fix RPC errors

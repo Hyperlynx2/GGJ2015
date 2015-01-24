@@ -82,55 +82,87 @@ namespace HackingGame
 			System.Random random = new System.Random();
 			
 			_goalRow = random.Next(0, gridRows);
+			_startRow = random.Next (0, gridRows);
 
 			//build a path from the goal back towards the start
 
 			Stack<PathPiece> path = new Stack<PathPiece>();
 
-			PathPiece currentPiece = new PathPiece(_goalRow, gridColumns -1);
+			PathPiece currentPiece = new PathPiece();
+			currentPiece.row = _goalRow;
+			currentPiece.col = gridColumns - 1;
 			currentPiece.allowRight = true;
 			_grid[currentPiece.row, currentPiece.col] = currentPiece;
-
-			path.Push(currentPiece);
 
 			bool reachedStart = false;
 			while(!reachedStart)
 			{
-				int nextRow = currentPiece.row;
-				int nextCol = currentPiece.col;
+				path.Push(currentPiece);
+				PathPiece newPiece = new PathPiece(currentPiece);
 
 				switch(random.Next(0, 4))
 				{
 				case 0: //up
-					nextCol--;
+					newPiece.col--;
+					currentPiece.allowUp = true;
+					newPiece.allowDown = true;
 					break;
 
 				case 1: //right
-					nextRow++;
+					newPiece.row++;
+					currentPiece.allowRight = true;
+					newPiece.allowLeft = true;
 					break;
 
 				case 2: //down
-					nextCol++;
+					newPiece.col++;
+					currentPiece.allowDown = true;
+					currentPiece.allowUp = true;
 					break;
 
 				case 3: //left
-					nextRow--;
+					newPiece.row--;
+					currentPiece.allowLeft = true;
+					newPiece.allowRight = true;
 					break;
 				}
 
-				if(nextRow > 0 && nextRow < gridRows
-				&& nextCol > 0 && nextCol < gridColumns
-				&& _grid[nextRow, nextCol] == null)
+				int newRow = newPiece.row;
+				int newCol = newPiece.col;
+
+				//not off edge of board and no piece already there?
+				if(newRow > 0 && newRow < gridRows
+			    && newCol > 0 && newCol < gridColumns
+			    && _grid[newRow, newCol] == null)
 				{
+					_grid[newRow, newCol] = newPiece;
+					currentPiece = newPiece;
+
+					if(newCol == 0 && newRow == _startRow)
+					{
+						newPiece.allowLeft = true;
+						reachedStart = true;
+					}
+				}
+				else
+				{
+					//run out of room? backtrack up the stack.
+					if(newRow - 1 > 0 && _grid[newRow - 1, newCol] != null //left
+					&& newRow + 1 < gridRows && _grid[newRow + 1, newCol] != null //right
+					&& newCol - 1 > 0 && _grid[newRow, newCol - 1] != null //down
+					&& newCol + 1 < gridColumns && _grid[newRow, newCol + 1] != null) //up					   
+					{
+						currentPiece = path.Pop();
+					}
+
 				}
 			}
 
+			//TODO: now add obstacles.
+
+			//TODO: now that the path is built, remove them from the board and put the pieces in a "pick bin" instead.
+
 		}
-
-
-
-
-
 
 		// Use this for initialization
 		void Start ()

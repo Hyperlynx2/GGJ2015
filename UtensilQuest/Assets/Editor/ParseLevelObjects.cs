@@ -47,7 +47,7 @@ public class ParseLevelObjects : MonoBehaviour
                 AttachSecurityCamera(obj, bKeepValues);
             }
 
-            if (obj.name.Contains("COLLIDE"))
+            if (obj.name.Contains("COLLIDE") || obj.name.Contains("COLLISION"))
             {
                 AttachCollidableObject(obj, bKeepValues);
             }

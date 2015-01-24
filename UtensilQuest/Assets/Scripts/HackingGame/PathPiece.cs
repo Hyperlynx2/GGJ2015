@@ -5,7 +5,7 @@ namespace HackingGame
 
 	public class PathPiece : MonoBehaviour
 	{
-		public const float MULTIPLIER = 100.0f;
+		public const float MULTIPLIER = 10.0f;
 
 		/// <summary>
 		/// Does this piece form part of the "live current"	from the start point?

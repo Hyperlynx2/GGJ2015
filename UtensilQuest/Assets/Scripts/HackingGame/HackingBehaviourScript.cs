@@ -100,10 +100,13 @@ namespace HackingGame
 
 			PathPiece currentPiece = NewPiece();
 
-			path.Push(currentPiece);
+			currentPiece.row = _goalRow;
+			currentPiece.col = gridColumns - 1;
 
-			currentPiece.allowRight = true;
+			currentPiece.allowRight = true; //so that the current flows off the board to the right
+
 			_grid[currentPiece.row, currentPiece.col] = currentPiece;
+			path.Push(currentPiece);
 
 			bool reachedStart = false;
 			while(!reachedStart)

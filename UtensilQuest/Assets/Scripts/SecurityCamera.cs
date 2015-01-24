@@ -12,6 +12,7 @@ public class SecurityCamera : MonoBehaviour
 	public int waitFor;
 
     public Image miniMapImage;
+    private Camera _camera;
 
 	public enum rotDirection
 	{
@@ -22,17 +23,17 @@ public class SecurityCamera : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-	
+        _camera = transform.GetChild(0).gameObject.GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if(camera.enabled)
+		if(_camera.enabled)
 		{
 			if(Input.GetMouseButtonDown(0))
 			{
-				Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 				RaycastHit hit;
 				if(Physics.Raycast(ray, out hit))
 				{

@@ -1048,6 +1048,25 @@ ModelImporter:
     102084: SecurityCam-Top-013
     102086: SecurityCam-Top-014
     102088: SecurityCam-Top-015_
+    102090: POS-001
+    102092: POS-002
+    102094: POS-003
+    102096: POS-004
+    102098: POS-005
+    102100: POS-006
+    102102: POS-007
+    102104: POS-008
+    102106: POS-009
+    102108: POS-010
+    102110: POS-011
+    102112: POS-012
+    102114: POS-013
+    102116: POS-014
+    102118: POS-015
+    102120: SecurityCam-Top-003
+    102122: SecurityCam-Top-008
+    102124: SecurityCam-Top-010
+    102126: SecurityCam-Top-015
     400000: COLLIDE-FloorType01-0001
     400002: COLLIDE-FloorType01-002
     400004: COLLIDE-FloorType01-003
@@ -2093,6 +2112,25 @@ ModelImporter:
     402084: SecurityCam-Top-013
     402086: SecurityCam-Top-014
     402088: SecurityCam-Top-015_
+    402090: POS-001
+    402092: POS-002
+    402094: POS-003
+    402096: POS-004
+    402098: POS-005
+    402100: POS-006
+    402102: POS-007
+    402104: POS-008
+    402106: POS-009
+    402108: POS-010
+    402110: POS-011
+    402112: POS-012
+    402114: POS-013
+    402116: POS-014
+    402118: POS-015
+    402120: SecurityCam-Top-003
+    402122: SecurityCam-Top-008
+    402124: SecurityCam-Top-010
+    402126: SecurityCam-Top-015
     2300000: COLLIDE-FloorType01-0001
     2300002: COLLIDE-FloorType01-002
     2300004: COLLIDE-FloorType01-003
@@ -3137,6 +3175,10 @@ ModelImporter:
     2302082: SecurityCam-Top-013
     2302084: SecurityCam-Top-014
     2302086: SecurityCam-Top-015_
+    2302088: SecurityCam-Top-003
+    2302090: SecurityCam-Top-008
+    2302092: SecurityCam-Top-010
+    2302094: SecurityCam-Top-015
     3300000: COLLIDE-FloorType01-0001
     3300002: COLLIDE-FloorType01-002
     3300004: COLLIDE-FloorType01-003
@@ -4181,6 +4223,10 @@ ModelImporter:
     3302082: SecurityCam-Top-013
     3302084: SecurityCam-Top-014
     3302086: SecurityCam-Top-015_
+    3302088: SecurityCam-Top-003
+    3302090: SecurityCam-Top-008
+    3302092: SecurityCam-Top-010
+    3302094: SecurityCam-Top-015
     4300000: COLLIDE-FloorType01-0001
     4300002: COLLIDE-FloorType01-002
     4300004: COLLIDE-FloorType01-003
@@ -5225,6 +5271,10 @@ ModelImporter:
     4302082: COLLIDE-FloorType01-668
     4302084: COLLISION-Obstacle-1x1-Banana-005
     4302086: COLLISION-Obstacle-1x1-Table-003
+    4302088: SecurityCam-Top-015
+    4302090: SecurityCam-Top-010
+    4302092: SecurityCam-Top-008
+    4302094: SecurityCam-Top-003
     9500000: //RootNode
   materials:
     importMaterials: 1

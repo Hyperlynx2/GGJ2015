@@ -143,10 +143,10 @@ public class ParseLevelObjects : MonoBehaviour
         }
 
         string cameraID = obj.name.Substring("SecurityCam-Top-".Length, 3);
-        Debug.Log(cameraID);
+       // Debug.Log(cameraID);
         Debug.Log("SecurityCamera-MiniMap-" + cameraID.ToString());
         GameObject miniMapIcon = GameObject.Find("SecurityCamera-MinMap-" + cameraID.ToString());
-        Debug.Log(miniMapIcon);
+        //Debug.Log(miniMapIcon);
         if(miniMapIcon)
         {
             scr.miniMapImage = miniMapIcon.GetComponent<Image>();
@@ -159,10 +159,13 @@ public class ParseLevelObjects : MonoBehaviour
             net = obj.AddComponent<NetworkView>();
         }
 
-        Camera cam = obj.GetComponent<Camera>();
+
+        GameObject cameraMount = obj.transform.GetChild(0).gameObject;
+        cameraMount.transform.localRotation = Quaternion.identity;
+        Camera cam = cameraMount.GetComponent<Camera>();
         if (cam == null)
-        {
-            cam = obj.AddComponent<Camera>();
+        {   
+            cam = cameraMount.AddComponent<Camera>();
         }
 
         AudioListener listener = obj.GetComponent<AudioListener>();
@@ -172,8 +175,8 @@ public class ParseLevelObjects : MonoBehaviour
         }
 
         GameManager manager = GameManager.FindObjectOfType<GameManager>();
-        manager.secCams.Add(cam);
-        manager.secCams.Sort((emp1, emp2) => emp1.name.CompareTo(emp2.name));
+        manager.secCams.Add(obj.GetComponent<SecurityCamera>());
+        manager.secCams.Sort((emp1, emp2) => emp1.gameObject.name.CompareTo(emp2.gameObject.name));
 
         EditorUtility.SetDirty(obj);
         //Debug.Log("Added a camera!");

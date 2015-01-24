@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 			//turn the first one on.
             secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[0].GetComponent<AudioListener>().enabled = true;
-            secCams[0].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
+            //secCams[0].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
     }
 

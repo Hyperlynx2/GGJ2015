@@ -115,8 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piecePrefab: {fileID: 173594, guid: 59a781bfa85e63f4abb776af76b22e00, type: 2}
   _pivotPoint: {fileID: 2041550859}
-  gridColumns: 0
-  gridRows: 0
+  gridColumns: 10
+  gridRows: 10
 --- !u!1 &1037851793
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - 136: {fileID: 13667014}
   - 23: {fileID: 2367014}
   - 114: {fileID: 11467014}
+  - 148: {fileID: 14818456}
   m_Layer: 2
   m_Name: Enemy
   m_TagString: Untagged
@@ -100,6 +101,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!148 &14818456
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167014}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 467014}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
 			//if I can see the player, I'll chase him
 			distanceToPlayer = theSpy.transform.position - transform.position;
 			detectionDot = Vector3.Dot (distanceToPlayer.normalized, transform.TransformDirection (Vector3.forward)); 
-			if(detectionDot > 0.5f && distanceToPlayer.magnitude < detectionRange && !Physics.Linecast(transform.position, theSpy.transform.position)) //and the linecast; add that later when I cbf with layermasking
+			if(detectionDot > 0.5f && distanceToPlayer.magnitude < detectionRange && !Physics.Linecast(transform.position, (theSpy.transform.position += new Vector3(0,5,0)))) //and the linecast; add that later when I cbf with layermasking
 			{
 				myState = states.chasing;
 			}
@@ -122,6 +122,10 @@ public class Enemy : MonoBehaviour
 		{
 			transform.LookAt(theSpy.transform.position);
 			transform.Translate(Vector3.forward * chaseSpeed * Time.smoothDeltaTime);
+			
+			theSpy.transform.LookAt(this.transform.position);
+			theSpy.GetComponent<AgentBehaviour>().messageText.text = "BUSTED!";
+			Time.timeScale = 0;
 			//condition to start patrolling again...
 			//currentSpeed = patrolSpeed;
 			//myState = states.patrolling;

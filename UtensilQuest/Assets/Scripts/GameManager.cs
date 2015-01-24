@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
     {
         spy, handler,
     }
-    public role myRole;
+    [HideInInspector] public role myRole;
     public List<SecurityCamera> secCams = new List<SecurityCamera>();
-    public GameObject theSpy;
+	[HideInInspector] public GameObject theSpy;
     private int camIndex = 0;
     public GameObject OculusPlayer;
     public GameObject NonOcPlayer;
@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 	public Text FirstDigText;
 	public Text SecondDigText;
 	public Text CurCamText;
+	public GameObject food;
+	public GameObject[] cutlery;
     // Use this for initialization
     void Start()
     {
@@ -46,6 +48,13 @@ public class GameManager : MonoBehaviour
 				cam.GetComponent<AudioListener>().enabled = false;
 			}
 			Destroy (GameObject.Find("CameraGUI"));
+			//spawn the pickups and food
+			Instantiate (food, GameObject.Find("FOOD-LOCATION").transform.position, Quaternion.identity);
+			GameObject[] pickupSpots = GameObject.FindGameObjectsWithTag("PickupPos");
+			for(int i = 0; i < cutlery.Length; i ++)
+			{
+				Instantiate(cutlery[i], pickupSpots[i].transform.position, Quaternion.identity);
+			}
 		}
         else  //I'm the handler, set up the cameras
         {

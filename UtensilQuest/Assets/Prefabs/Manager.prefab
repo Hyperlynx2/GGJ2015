@@ -39,13 +39,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b71846e7a3daab4787a5308543eec99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRole: 1
+  OculusGame: 0
+  myRole: 0
   secCams:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   theSpy: {fileID: 0}
+  OculusPlayer: {fileID: 126706, guid: 49166a637e4831c49883adbcf87c17c0, type: 2}
+  NonOcPlayer: {fileID: 100002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+  spawnPoint: {fileID: 0}
+  typingWindow: 2
+  FirstDigText: {fileID: 0}
+  SecondDigText: {fileID: 0}
+  CurCamText: {fileID: 0}
+  food: {fileID: 104914, guid: 864d4e772101b8d448e8e854da734907, type: 2}
+  cutlery:
+  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
+  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
+  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -4,6 +4,8 @@ using System.Collections;
 public class Door : MonoBehaviour 
 {
 	public bool isLocked;
+	private float reLockTimer;
+	public int ReLockTime;
 	// Use this for initialization
 	void Start () 
 	{
@@ -13,9 +15,14 @@ public class Door : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.Return))
+		if(!isLocked)
 		{
-			Locking (!isLocked);
+			reLockTimer += Time.smoothDeltaTime;
+			if(reLockTimer >= ReLockTime)
+			{
+				reLockTimer = 0;
+				Locking (true);
+			}
 		}
 	}
 
@@ -24,12 +31,12 @@ public class Door : MonoBehaviour
 		if(lockStatus == true)
 		{
 			isLocked = true;
-			transform.Translate(Vector3.forward * transform.localScale.z);
+			transform.Translate(Vector3.left * transform.localScale.x);
 		}
 		else
 		{
 			isLocked = false;
-			transform.Translate(Vector3.back * transform.localScale.z);
+			transform.Translate(Vector3.right * transform.localScale.x);
 		}
 	}
 }

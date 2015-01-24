@@ -50,39 +50,6 @@ public class GameManager : MonoBehaviour
 			secCams[0].enabled = true;
 			secCams[0].GetComponent<AudioListener>().enabled = true;
         }
-
-        if (theSpy == null) //set theSpy if it's null, just to avoid errors, especially with the next part.
-        {
-            theSpy = GameObject.Find("Player(Clone)");
-        }
-        else //not null, go ahead and turn it off
-        {
-            if (myRole == role.handler) //if I'm not the spy, disable the spy. Then set up the security cams.
-            {
-				//turn off the Oculus prefab components if we're playing an oculus game
-				if(OculusGame)
-				{
-	                theSpy.SetActive(false);
-	                theSpy.GetComponent<OVRGamepadController>().enabled = false;
-	                theSpy.GetComponent<OVRPlayerController>().enabled = false;
-	                theSpy.GetComponent<OVRMainMenu>().enabled = false;
-	                theSpy.GetComponentInChildren<OVRCameraRig>().enabled = false;
-	                theSpy.GetComponentInChildren<OVRManager>().enabled = false;
-	                theSpy.GetComponentInChildren<OVRScreenFade>().enabled = false;
-				}
-                else //or the fps controller components if we're not
-                {
-	                theSpy.GetComponent<MouseLook>().enabled = false;
-	                theSpy.GetComponent<CharacterMotor>().enabled = false;
-	                theSpy.GetComponent<FPSInputController>().enabled = false;
-                }
-                //turn off the player's cameras
-                foreach (Camera cam in theSpy.GetComponentsInChildren<Camera>())
-                {
-                    cam.enabled = false;
-                }
-            }
-        }
     }
 
     // Update is called once per frame
@@ -105,6 +72,9 @@ public class GameManager : MonoBehaviour
     //HACKER SECTION
     void HandlerMechanics()
     {
+		//double check the player is turned off.
+		//TurnOffPlayer ();
+
         //press tab to cycle through the cameras
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -173,6 +143,38 @@ public class GameManager : MonoBehaviour
         secCams[camIndex].enabled = true;
         secCams[camIndex].GetComponent<AudioListener>().enabled = true;
     }
+
+	//fallback function
+	void TurnOffPlayer()
+	{
+		if (theSpy == null) //set theSpy if it's null, just to avoid errors, especially with the next part.
+		{
+			theSpy = GameObject.Find("Player(Clone)");
+
+			//turn off the Oculus prefab components if we're playing an oculus game
+			if(OculusGame)
+			{
+				theSpy.SetActive(false);
+				theSpy.GetComponent<OVRGamepadController>().enabled = false;
+				theSpy.GetComponent<OVRPlayerController>().enabled = false;
+				theSpy.GetComponent<OVRMainMenu>().enabled = false;
+				theSpy.GetComponentInChildren<OVRCameraRig>().enabled = false;
+				theSpy.GetComponentInChildren<OVRManager>().enabled = false;
+				theSpy.GetComponentInChildren<OVRScreenFade>().enabled = false;
+			}
+			else //or the fps controller components if we're not
+			{
+				theSpy.GetComponent<MouseLook>().enabled = false;
+				theSpy.GetComponent<CharacterMotor>().enabled = false;
+				theSpy.GetComponent<FPSInputController>().enabled = false;
+			}
+			//turn off the player's cameras
+			foreach (Camera cam in theSpy.GetComponentsInChildren<Camera>())
+			{
+				cam.enabled = false;
+			}
+		}
+	}
 
     //SPY SECTION
     void SpyMechanics()

@@ -1,5 +1,8 @@
 ﻿using UnityEditor;
 using UnityEngine;
+
+using UnityEngine.UI;
+
 using System.Collections;
 using System.Collections.Generic;
 
@@ -39,7 +42,7 @@ public class ParseLevelObjects : MonoBehaviour
         GameObject[] goList = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject obj in goList)
         {
-            if (obj.name.Contains("SecurityCam"))
+            if (obj.name.Contains("SecurityCam-Top"))
             {
                 AttachSecurityCamera(obj, bKeepValues);
             }
@@ -85,6 +88,8 @@ public class ParseLevelObjects : MonoBehaviour
 
     private static void HandlePathNode(GameObject obj)
     {
+        obj.renderer.enabled = false;
+
         //Parse the path node for information
         string pathID = obj.name.Substring("PATHNODE-".Length, 3);
         string nodeValue = obj.name.Substring("PATHNODE-xxx-".Length, 3);
@@ -137,6 +142,16 @@ public class ParseLevelObjects : MonoBehaviour
             scr.waitFor = 1;
         }
 
+        string cameraID = obj.name.Substring("SecurityCam-Top-".Length, 3);
+        Debug.Log(cameraID);
+        Debug.Log("SecurityCamera-MiniMap-" + cameraID.ToString());
+        GameObject miniMapIcon = GameObject.Find("SecurityCamera-MinMap-" + cameraID.ToString());
+        Debug.Log(miniMapIcon);
+        if(miniMapIcon)
+        {
+            scr.miniMapImage = miniMapIcon.GetComponent<Image>();
+        }
+
         NetworkView net = obj.GetComponent<NetworkView>();
 
         if (net == null)
@@ -158,9 +173,10 @@ public class ParseLevelObjects : MonoBehaviour
 
         GameManager manager = GameManager.FindObjectOfType<GameManager>();
         manager.secCams.Add(cam);
+        manager.secCams.Sort((emp1, emp2) => emp1.name.CompareTo(emp2.name));
 
         EditorUtility.SetDirty(obj);
-        Debug.Log("Added a camera!");
+        //Debug.Log("Added a camera!");
     }
 
     private static void AttachCollidableObject(GameObject obj, bool bKeepValues)
@@ -173,7 +189,7 @@ public class ParseLevelObjects : MonoBehaviour
         }
 
         EditorUtility.SetDirty(obj);
-        Debug.Log("Added a collidable");
+        //Debug.Log("Added a collidable");
     }
 
 }

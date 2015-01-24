@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Item : MonoBehaviour 
 {
-	public Texture icon;
+	public Sprite icon;
 	// Use this for initialization
 	void Start () 
 	{
@@ -26,6 +26,7 @@ public class Item : MonoBehaviour
 			hit.GetComponentInChildren<AgentBehaviour>().currentSlot += 1;
 			this.renderer.enabled = false;
 			this.collider.enabled = false;
+			hit.GetComponentInChildren<AgentBehaviour>().SendMessage("UpdateImages");
 		}
 	}
 }

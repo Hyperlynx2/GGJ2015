@@ -55,10 +55,12 @@ public class GameManager : MonoBehaviour
 			{
 				cam.enabled = false;
 				cam.GetComponent<AudioListener>().enabled = false;
+                //cam.GetComponent<SecurityCamera>().miniMapImage.enabled = false;
 			}
 			//turn the first one on.
 			secCams[0].enabled = true;
-			secCams[0].GetComponent<AudioListener>().enabled = true;
+            secCams[0].GetComponent<AudioListener>().enabled = true;
+            secCams[0].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
     }
 
@@ -104,6 +106,7 @@ public class GameManager : MonoBehaviour
         {
             secCams[camIndex].enabled = false;
             secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
             //cycle through as many cameras as we have.
             if (camIndex < secCams.Count - 1)
             {
@@ -115,11 +118,13 @@ public class GameManager : MonoBehaviour
             }
             secCams[camIndex].enabled = true;
             secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
 		if(Input.GetKeyDown(KeyCode.LeftAlt))
 		{
 			secCams[camIndex].enabled = false;
-			secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+            secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
 			//cycle through as many cameras as we have.
 			if (camIndex > 0)
 			{
@@ -130,7 +135,8 @@ public class GameManager : MonoBehaviour
 				camIndex = secCams.Count - 1;
 			}
 			secCams[camIndex].enabled = true;
-			secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+            secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
 		}
 
         if (Input.GetKeyDown(KeyCode.Alpha1))	//I pressed 1
@@ -304,9 +310,11 @@ public class GameManager : MonoBehaviour
 		{
 	        secCams[camIndex].enabled = false;
 	        secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
 	        camIndex = CamNumber;
 	        secCams[camIndex].enabled = true;
 	        secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
 			if(camIndex < 10)
 			{
 				CurCamText.text = "0"+camIndex.ToString();

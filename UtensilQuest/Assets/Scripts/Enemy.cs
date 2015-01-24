@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-
+		theSpy = GameObject.Find ("Player(Clone)");
 	}
 	
 	// Update is called once per frame
@@ -34,12 +34,15 @@ public class Enemy : MonoBehaviour
 		{
 			return;
 		}
-		//if I can see the player, I'll chase him
-		distanceToPlayer = theSpy.transform.position - transform.position;
-		detectionDot = Vector3.Dot (distanceToPlayer.normalized, transform.TransformDirection (Vector3.forward)); 
-		if(detectionDot > 0.5f && distanceToPlayer.magnitude < 10 && !Physics.Linecast(transform.position, theSpy.transform.position)) //and the linecast; add that later when I cbf with layermasking
+		if(theSpy != null)
 		{
-			myState = states.chasing;
+			//if I can see the player, I'll chase him
+			distanceToPlayer = theSpy.transform.position - transform.position;
+			detectionDot = Vector3.Dot (distanceToPlayer.normalized, transform.TransformDirection (Vector3.forward)); 
+			if(detectionDot > 0.5f && distanceToPlayer.magnitude < 10 && !Physics.Linecast(transform.position, theSpy.transform.position)) //and the linecast; add that later when I cbf with layermasking
+			{
+				myState = states.chasing;
+			}
 		}
 
 		//I'm currently on patrol

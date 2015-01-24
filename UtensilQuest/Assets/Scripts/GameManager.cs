@@ -73,9 +73,16 @@ public class GameManager : MonoBehaviour
 			//turn the first one on.
             secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[0].GetComponent<AudioListener>().enabled = true;
-            secCams[0].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(false);
+            secCams[0].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(true);
+            StartCoroutine(ShowFirstCameraOnMinimap());
             //secCams[0].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
+    }
+
+    IEnumerator ShowFirstCameraOnMinimap()
+    {
+        yield return new WaitForEndOfFrame();
+        secCams[0].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(true);
     }
 
     // Update is called once per frame

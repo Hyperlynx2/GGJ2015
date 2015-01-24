@@ -167,14 +167,14 @@ namespace HackingGame
 				{
 					print("...invalid piece");
 
+					int currentRow = currentPiece.row;
+					int currentCol = currentPiece.col;
+
 					//run out of room? backtrack up the stack.
-					if((newRow - 1 < 0 || newCol >= gridColumns || _grid[newRow - 1, newCol] != null) //left
-
-					&& (newRow + 1 > gridRows || newCol >= gridColumns || _grid[newRow + 1, newCol] != null) //right
-
-					&& (newCol - 1 < 0 || newRow >= gridRows || _grid[newRow, newCol - 1] != null ) //down
-
-				    && (newCol + 1 > gridColumns || newRow >= gridRows || _grid[newRow, newCol + 1] != null)) //up					   
+					if((currentRow - 1 < 0 || _grid[currentRow - 1, currentCol] != null) //can't go left 
+					&& (currentRow + 1 > gridRows || _grid[currentRow + 1, currentCol] != null) //can't go right
+					&& (currentCol - 1 < 0 || _grid[currentRow, currentCol - 1] != null ) //can't go down
+				    && (currentCol + 1 > gridColumns || _grid[currentRow, currentCol + 1] != null)) //can't go up					   
 					{
 						print("backtracking");
 						path.Pop();

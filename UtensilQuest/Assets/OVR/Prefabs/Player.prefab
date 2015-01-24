@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11426706}
   - 148: {fileID: 14826706}
   - 114: {fileID: 11456844}
+  - 114: {fileID: 11458924}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -446,6 +447,19 @@ MonoBehaviour:
   invGUI: []
   messageText: {fileID: 0}
   currentSlot: 0
+--- !u!114 &11458924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d1cafe0bbfe3d4881d3a276a98354c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabAgentMapIcon: {fileID: 123576, guid: d7b27abcbd9315d48ab3559e907f3ac0, type: 2}
+  miniMapIconInstance: {fileID: 0}
 --- !u!143 &14326706
 CharacterController:
   m_ObjectHideFlags: 1

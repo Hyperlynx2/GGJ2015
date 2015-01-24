@@ -31,12 +31,12 @@ public class Door : MonoBehaviour
 		if(lockStatus == true)
 		{
 			isLocked = true;
-			transform.Translate(Vector3.left * transform.localScale.x);
+			transform.Translate(Vector3.down * 20);
 		}
 		else
 		{
 			isLocked = false;
-			transform.Translate(Vector3.right * transform.localScale.x);
+			transform.Translate(Vector3.up * 20);
 		}
 	}
 }

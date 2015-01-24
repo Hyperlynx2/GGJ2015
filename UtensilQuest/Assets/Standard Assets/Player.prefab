@@ -361,9 +361,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   invIcons:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -371,9 +369,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   messageText: {fileID: 0}
+  timerText: {fileID: 0}
   currentSlot: 0
+  levelLength: 150
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

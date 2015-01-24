@@ -124,12 +124,20 @@ public class Enemy : MonoBehaviour
 		//I'm chasing the player!
 		if(myState == states.chasing)
 		{
-			transform.LookAt(theSpy.transform.position);
-			transform.Translate(Vector3.forward * chaseSpeed * Time.smoothDeltaTime);
-			
+			if(Vector3.Distance(theSpy.transform.position, this.transform.position) > 10)
+			{
+				transform.LookAt(theSpy.transform.position -= new Vector3(0,5,0));
+				transform.Translate(Vector3.forward * chaseSpeed * Time.smoothDeltaTime);
+			}
+			else
+			{
+				transform.LookAt(theSpy.transform.position -= new Vector3(0,5,0));
+			}
 			//theSpy.transform.LookAt(this.transform.position);
 			theSpy.GetComponent<AgentBehaviour>().messageText.text = "BUSTED!";
-			Time.timeScale = 0;
+			//play a whistle,
+			theSpy.GetComponent<CharacterController>().enabled = false;
+			theSpy.GetComponent<AgentBehaviour>().Invoke("GameLose", 3.0f);
 			//condition to start patrolling again...
 			//currentSpeed = patrolSpeed;
 			//myState = states.patrolling;

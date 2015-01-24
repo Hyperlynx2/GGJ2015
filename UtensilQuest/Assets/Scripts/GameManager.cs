@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; 
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 //this script determines what role you are and then sets up your mechanics accordingly
 public class GameManager : MonoBehaviour
@@ -17,6 +18,14 @@ public class GameManager : MonoBehaviour
     public GameObject OculusPlayer;
     public GameObject NonOcPlayer;
     public Transform spawnPoint;
+	private bool Typing;
+	private int firstDigit;
+	private int secondDigit;
+	private float typingTimer;
+	public int typingWindow;
+	public Text FirstDigText;
+	public Text SecondDigText;
+	public Text CurCamText;
     // Use this for initialization
     void Start()
     {
@@ -75,8 +84,22 @@ public class GameManager : MonoBehaviour
 		//double check the player is turned off.
 		TurnOffPlayer ();
 
+		//handle the timer for typing your chosen camera
+		if(Typing)
+		{
+			FirstDigText.text = firstDigit.ToString();
+			SecondDigText.text = secondDigit.ToString();
+			typingTimer += Time.smoothDeltaTime;
+			if(typingTimer >= typingWindow || Input.GetKeyDown(KeyCode.Return))
+			{
+				//determine the number chosen and select that camera
+				typingTimer = 0;
+				SetCam(ProcessNumber(firstDigit,secondDigit));
+			}
+		}
+
         //press tab to cycle through the cameras
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             secCams[camIndex].enabled = false;
             secCams[camIndex].GetComponent<AudioListener>().enabled = false;
@@ -92,56 +115,210 @@ public class GameManager : MonoBehaviour
             secCams[camIndex].enabled = true;
             secCams[camIndex].GetComponent<AudioListener>().enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1) && secCams.Count - 1 >= 0 && secCams[0] != null)
+		if(Input.GetKeyDown(KeyCode.LeftAlt))
+		{
+			secCams[camIndex].enabled = false;
+			secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+			//cycle through as many cameras as we have.
+			if (camIndex > 0)
+			{
+				camIndex --;
+			}
+			else
+			{
+				camIndex = secCams.Count - 1;
+			}
+			secCams[camIndex].enabled = true;
+			secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+		}
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))	//I pressed 1
         {
-            SetCam(0);
+			//if I haven't started typing, now I am so it's the first digit.
+            if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 1;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 1;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && secCams.Count - 1 >= 1 && secCams[1] != null)
-        {
-            SetCam(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && secCams.Count - 1 >= 2 && secCams[2] != null)
-        {
-            SetCam(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && secCams.Count - 1 >= 3 && secCams[3] != null)
-        {
-            SetCam(3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && secCams.Count - 1 >= 4 && secCams[4] != null)
-        {
-            SetCam(4);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6) && secCams.Count - 1 >= 5 && secCams[5] != null)
-        {
-            SetCam(5);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7) && secCams.Count - 1 >= 6 && secCams[6] != null)
-        {
-            SetCam(6);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8) && secCams.Count - 1 >= 7 && secCams[7] != null)
-        {
-            SetCam(7);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha9) && secCams.Count - 1 >= 8 && secCams[8] != null)
-        {
-            SetCam(8);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha0) && secCams.Count - 1 >= 9 && secCams[9] != null)
-        {
-            SetCam(9);
-        }
+		if (Input.GetKeyDown(KeyCode.Alpha2))	//I pressed 2
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 2;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 2;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha3))	//I pressed 3
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				firstDigit = 3;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 3;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha4))	//I pressed 4
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 4;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 4;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha5))	//I pressed 5
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 5;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 5;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha6))	//I pressed 6
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 6;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 6;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha7))	//I pressed 7
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 7;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 7;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha8))	//I pressed 8
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 8;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 8;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha9))	//I pressed 9
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 9;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 9;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha0))	//I pressed 0
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 0;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 0;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
     }
+
+	//this turns the two numbers we typed into a double digit number
+	int ProcessNumber(int a, int b)
+	{
+		int camNum = (a * 10) + b;
+		//Debug.Log (camNum);
+		firstDigit = 0;
+		secondDigit = 0;
+		FirstDigText.text = "_";
+		SecondDigText.text = "_";
+		Typing = false;
+		return camNum;
+	}
 
     //sets the camera to the one we want.
     void SetCam(int CamNumber)
     {
-        secCams[camIndex].enabled = false;
-        secCams[camIndex].GetComponent<AudioListener>().enabled = false;
-        camIndex = CamNumber;
-        secCams[camIndex].enabled = true;
-        secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+		if(secCams.Count - 1 >= CamNumber && secCams[CamNumber] != null)
+		{
+	        secCams[camIndex].enabled = false;
+	        secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+	        camIndex = CamNumber;
+	        secCams[camIndex].enabled = true;
+	        secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+			if(camIndex < 10)
+			{
+				CurCamText.text = "0"+camIndex.ToString();
+			}
+			else
+			{
+				CurCamText.text = camIndex.ToString();
+			}
+		}
+		else
+		{
+			return;
+		}
     }
 
 	//fallback function

@@ -488,124 +488,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 15423611}
   m_Mesh: {fileID: 4301906, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
---- !u!1 &19375257
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 167014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-  m_PrefabInternal: {fileID: 1118094264}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 19375263}
-  - 33: {fileID: 19375262}
-  - 136: {fileID: 19375261}
-  - 23: {fileID: 19375260}
-  - 114: {fileID: 19375259}
-  - 148: {fileID: 19375258}
-  m_Layer: 2
-  m_Name: Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!148 &19375258
-NetworkView:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 14818456, guid: 415e12d7eb11c5a45b5e374145af298f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1118094264}
-  m_GameObject: {fileID: 19375257}
-  m_Enabled: 1
-  m_StateSynchronization: 1
-  m_Observed: {fileID: 19375263}
-  m_ViewID:
-    m_ID: 16
-    m_Type: 1
---- !u!114 &19375259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1118094264}
-  m_GameObject: {fileID: 19375257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 067686898e3bd774a80b1fe66ce24720, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1643373725}
-  - {fileID: 1905541843}
-  - {fileID: 1751962160}
-  - {fileID: 1740789865}
-  - {fileID: 2098689644}
-  - {fileID: 66343795}
-  - {fileID: 995700252}
-  - {fileID: 823385677}
-  - {fileID: 1058265221}
-  - {fileID: 15423612}
-  - {fileID: 789168857}
-  - {fileID: 567959884}
-  theSpy: {fileID: 0}
-  patrolSpeed: 10
-  chaseSpeed: 20
-  timeToWait: 0
-  myState: 0
---- !u!23 &19375260
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2367014, guid: 415e12d7eb11c5a45b5e374145af298f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1118094264}
-  m_GameObject: {fileID: 19375257}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 0fb5a9f183940ef458ca039d2acb8902, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!136 &19375261
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13667014, guid: 415e12d7eb11c5a45b5e374145af298f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1118094264}
-  m_GameObject: {fileID: 19375257}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!33 &19375262
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3367014, guid: 415e12d7eb11c5a45b5e374145af298f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1118094264}
-  m_GameObject: {fileID: 19375257}
-  m_Mesh: {fileID: 4300000, guid: 8beae32e527a9be49b8d50e2a50a91d4, type: 3}
---- !u!4 &19375263
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-  m_PrefabInternal: {fileID: 1118094264}
-  m_GameObject: {fileID: 19375257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 205, y: 0, z: -255}
-  m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
 --- !u!1 &21543943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,6 +2689,7 @@ GameObject:
   - 4: {fileID: 91742038}
   - 33: {fileID: 91742040}
   - 23: {fileID: 91742039}
+  - 65: {fileID: 91742041}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-DeskChair-004
   m_TagString: Untagged
@@ -2855,6 +2738,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 91742037}
   m_Mesh: {fileID: 4301732, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &91742041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 91742037}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 68.0759277, y: 110.590645, z: 60.4292603}
+  m_Center: {x: 0, y: 53.3146019, z: -20.333313}
 --- !u!1 &91937064
 GameObject:
   m_ObjectHideFlags: 0
@@ -3149,6 +3044,7 @@ GameObject:
   - 4: {fileID: 104856889}
   - 33: {fileID: 104856891}
   - 23: {fileID: 104856890}
+  - 65: {fileID: 104856892}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Banana-001
   m_TagString: Untagged
@@ -3197,6 +3093,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 104856888}
   m_Mesh: {fileID: 4301680, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &104856892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 104856888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 39.0559616, y: 207.338364, z: 69.148056}
+  m_Center: {x: -.000129699707, y: 103.669182, z: -1.52587927e-05}
 --- !u!1 &107970270
 GameObject:
   m_ObjectHideFlags: 0
@@ -3562,6 +3470,7 @@ GameObject:
   - 4: {fileID: 117252405}
   - 33: {fileID: 117252407}
   - 23: {fileID: 117252406}
+  - 65: {fileID: 117252408}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-009
   m_TagString: Untagged
@@ -3610,6 +3519,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 117252404}
   m_Mesh: {fileID: 4301740, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &117252408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117252404}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &118756493
 GameObject:
   m_ObjectHideFlags: 0
@@ -6921,6 +6842,7 @@ GameObject:
   - 4: {fileID: 232912827}
   - 33: {fileID: 232912829}
   - 23: {fileID: 232912828}
+  - 65: {fileID: 232912830}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-DeskChair-005
   m_TagString: Untagged
@@ -6969,6 +6891,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 232912826}
   m_Mesh: {fileID: 4301734, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &232912830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 232912826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 68.0759277, y: 110.590645, z: 60.4292603}
+  m_Center: {x: 0, y: 53.3146019, z: -20.333313}
 --- !u!1 &233703915
 GameObject:
   m_ObjectHideFlags: 0
@@ -7263,6 +7197,7 @@ GameObject:
   - 4: {fileID: 236012178}
   - 33: {fileID: 236012180}
   - 23: {fileID: 236012179}
+  - 65: {fileID: 236012181}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Desk-001
   m_TagString: Untagged
@@ -7311,6 +7246,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 236012177}
   m_Mesh: {fileID: 4301688, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &236012181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 236012177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 199.039062, y: 76.2212677, z: 80}
+  m_Center: {x: -.272918701, y: 38.1106339, z: .0711669922}
 --- !u!1 &239025581
 GameObject:
   m_ObjectHideFlags: 0
@@ -7876,6 +7823,7 @@ GameObject:
   - 4: {fileID: 262377884}
   - 33: {fileID: 262377886}
   - 23: {fileID: 262377885}
+  - 65: {fileID: 262377887}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Chair-002
   m_TagString: Untagged
@@ -7924,6 +7872,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 262377883}
   m_Mesh: {fileID: 4301708, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &262377887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 262377883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 87.9949951, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224517822, y: 65.7995682, z: -2.33767026e-13}
 --- !u!1 &262494188
 GameObject:
   m_ObjectHideFlags: 0
@@ -9541,6 +9501,7 @@ GameObject:
   - 4: {fileID: 315903673}
   - 33: {fileID: 315903675}
   - 23: {fileID: 315903674}
+  - 65: {fileID: 315903676}
   m_Layer: 0
   m_Name: COLLISION-OnDesk-1x1-Computer-001
   m_TagString: Untagged
@@ -9589,6 +9550,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 315903672}
   m_Mesh: {fileID: 4301848, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &315903676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 315903672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 88.052063, y: 66.3812561, z: 70.8635559}
+  m_Center: {x: -2.47732544, y: 106.829773, z: .276748657}
 --- !u!1 &317342634
 GameObject:
   m_ObjectHideFlags: 0
@@ -11358,6 +11331,7 @@ GameObject:
   - 4: {fileID: 345166083}
   - 33: {fileID: 345166085}
   - 23: {fileID: 345166084}
+  - 65: {fileID: 345166086}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Couch-002
   m_TagString: Untagged
@@ -11406,6 +11380,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 345166082}
   m_Mesh: {fileID: 4301662, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &345166086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 345166082}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 187.994965, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224502563, y: 65.7995682, z: -2.33767026e-13}
 --- !u!1 &347477712
 GameObject:
   m_ObjectHideFlags: 0
@@ -13249,6 +13235,7 @@ GameObject:
   - 4: {fileID: 420367225}
   - 33: {fileID: 420367227}
   - 23: {fileID: 420367226}
+  - 65: {fileID: 420367228}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-004
   m_TagString: Untagged
@@ -13297,6 +13284,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 420367224}
   m_Mesh: {fileID: 4301694, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &420367228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 420367224}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &420981850
 GameObject:
   m_ObjectHideFlags: 0
@@ -13520,6 +13519,7 @@ GameObject:
   - 4: {fileID: 428745541}
   - 33: {fileID: 428745543}
   - 23: {fileID: 428745542}
+  - 65: {fileID: 428745544}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Bin-002
   m_TagString: Untagged
@@ -13568,6 +13568,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 428745540}
   m_Mesh: {fileID: 4301718, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &428745544
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 428745540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 51.7826309, y: 113.024353, z: 52.1461563}
+  m_Center: {x: 1.52587891e-05, y: 56.5121765, z: -2.00771583e-13}
 --- !u!1 &429517600
 GameObject:
   m_ObjectHideFlags: 0
@@ -15125,6 +15137,7 @@ GameObject:
   - 4: {fileID: 485655205}
   - 33: {fileID: 485655207}
   - 23: {fileID: 485655206}
+  - 65: {fileID: 485655208}
   m_Layer: 0
   m_Name: COLLISION-OnDesk-1x1-Computer-004
   m_TagString: Untagged
@@ -15173,6 +15186,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 485655204}
   m_Mesh: {fileID: 4301854, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &485655208
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485655204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 88.052063, y: 66.3812561, z: 70.8635559}
+  m_Center: {x: -2.47732544, y: 106.829773, z: .276748657}
 --- !u!1 &486823810
 GameObject:
   m_ObjectHideFlags: 0
@@ -15609,6 +15634,7 @@ GameObject:
   - 4: {fileID: 496253358}
   - 33: {fileID: 496253360}
   - 23: {fileID: 496253359}
+  - 65: {fileID: 496253361}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-008
   m_TagString: Untagged
@@ -15657,6 +15683,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 496253357}
   m_Mesh: {fileID: 4301716, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &496253361
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 496253357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &498242433
 GameObject:
   m_ObjectHideFlags: 0
@@ -16164,6 +16202,7 @@ GameObject:
   - 4: {fileID: 510725360}
   - 33: {fileID: 510725362}
   - 23: {fileID: 510725361}
+  - 65: {fileID: 510725363}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Couch-003
   m_TagString: Untagged
@@ -16212,6 +16251,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 510725359}
   m_Mesh: {fileID: 4301664, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &510725363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510725359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 187.994965, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224502563, y: 65.7995682, z: .000122070312}
 --- !u!1 &512495712
 GameObject:
   m_ObjectHideFlags: 0
@@ -17571,6 +17622,7 @@ GameObject:
   - 4: {fileID: 540667124}
   - 33: {fileID: 540667126}
   - 23: {fileID: 540667125}
+  - 65: {fileID: 540667127}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-007
   m_TagString: Untagged
@@ -17619,6 +17671,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 540667123}
   m_Mesh: {fileID: 4301700, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &540667127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540667123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &545190085
 GameObject:
   m_ObjectHideFlags: 0
@@ -17629,6 +17693,7 @@ GameObject:
   - 4: {fileID: 545190086}
   - 33: {fileID: 545190088}
   - 23: {fileID: 545190087}
+  - 65: {fileID: 545190089}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-001
   m_TagString: Untagged
@@ -17677,6 +17742,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 545190085}
   m_Mesh: {fileID: 4301686, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &545190089
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545190085}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &547075964
 GameObject:
   m_ObjectHideFlags: 0
@@ -17900,6 +17977,7 @@ GameObject:
   - 4: {fileID: 554182515}
   - 33: {fileID: 554182517}
   - 23: {fileID: 554182516}
+  - 65: {fileID: 554182518}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Desk-002
   m_TagString: Untagged
@@ -17948,6 +18026,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 554182514}
   m_Mesh: {fileID: 4301702, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &554182518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554182514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 199.039062, y: 76.2212677, z: 80}
+  m_Center: {x: -.272918701, y: 38.1106339, z: .0711669922}
 --- !u!1 &554982869
 GameObject:
   m_ObjectHideFlags: 0
@@ -19636,6 +19726,7 @@ GameObject:
   - 4: {fileID: 607906892}
   - 33: {fileID: 607906894}
   - 23: {fileID: 607906893}
+  - 65: {fileID: 607906895}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-003
   m_TagString: Untagged
@@ -19684,6 +19775,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 607906891}
   m_Mesh: {fileID: 4301692, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &607906895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 607906891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &617574282
 GameObject:
   m_ObjectHideFlags: 0
@@ -20617,6 +20720,7 @@ GameObject:
   - 4: {fileID: 647245538}
   - 33: {fileID: 647245540}
   - 23: {fileID: 647245539}
+  - 65: {fileID: 647245541}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-005
   m_TagString: Untagged
@@ -20665,6 +20769,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 647245537}
   m_Mesh: {fileID: 4301696, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &647245541
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 647245537}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &650255853
 GameObject:
   m_ObjectHideFlags: 0
@@ -21953,6 +22069,7 @@ GameObject:
   - 4: {fileID: 690305044}
   - 33: {fileID: 690305046}
   - 23: {fileID: 690305045}
+  - 65: {fileID: 690305047}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Bin-001
   m_TagString: Untagged
@@ -22001,6 +22118,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 690305043}
   m_Mesh: {fileID: 4301684, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &690305047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 690305043}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 51.7826309, y: 113.024353, z: 52.1461563}
+  m_Center: {x: 1.52587891e-05, y: 56.5121765, z: -2.00771583e-13}
 --- !u!1 &690873456
 GameObject:
   m_ObjectHideFlags: 0
@@ -22295,6 +22424,7 @@ GameObject:
   - 4: {fileID: 696740463}
   - 33: {fileID: 696740465}
   - 23: {fileID: 696740464}
+  - 65: {fileID: 696740466}
   m_Layer: 0
   m_Name: COLLISION-OnDesk-1x1-Computer-002
   m_TagString: Untagged
@@ -22343,6 +22473,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 696740462}
   m_Mesh: {fileID: 4301850, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &696740466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 696740462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 88.052063, y: 66.3812561, z: 70.8635559}
+  m_Center: {x: -2.47732544, y: 106.829773, z: .276748657}
 --- !u!1 &698372988
 GameObject:
   m_ObjectHideFlags: 0
@@ -29184,6 +29326,7 @@ GameObject:
   - 4: {fileID: 904060548}
   - 33: {fileID: 904060550}
   - 23: {fileID: 904060549}
+  - 65: {fileID: 904060551}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-DeskChair-002
   m_TagString: Untagged
@@ -29232,6 +29375,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 904060547}
   m_Mesh: {fileID: 4301728, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &904060551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904060547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 68.0759277, y: 110.590645, z: 60.4292603}
+  m_Center: {x: 0, y: 53.3146019, z: -20.333313}
 --- !u!1 &905363652
 GameObject:
   m_ObjectHideFlags: 0
@@ -29455,6 +29610,7 @@ GameObject:
   - 4: {fileID: 911528188}
   - 33: {fileID: 911528190}
   - 23: {fileID: 911528189}
+  - 65: {fileID: 911528191}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Couch-001
   m_TagString: Untagged
@@ -29503,6 +29659,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 911528187}
   m_Mesh: {fileID: 4301660, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &911528191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911528187}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 187.994965, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224502563, y: 65.7995682, z: -2.33767026e-13}
 --- !u!1 &914480338
 GameObject:
   m_ObjectHideFlags: 0
@@ -29784,6 +29952,7 @@ GameObject:
   - 4: {fileID: 921133805}
   - 33: {fileID: 921133807}
   - 23: {fileID: 921133806}
+  - 65: {fileID: 921133808}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Couch-004
   m_TagString: Untagged
@@ -29832,6 +30001,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 921133804}
   m_Mesh: {fileID: 4301666, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &921133808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 921133804}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 187.994965, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224502563, y: 65.7995682, z: .000122070312}
 --- !u!1 &923762801
 GameObject:
   m_ObjectHideFlags: 0
@@ -30326,6 +30507,7 @@ GameObject:
   - 4: {fileID: 936363319}
   - 33: {fileID: 936363321}
   - 23: {fileID: 936363320}
+  - 65: {fileID: 936363322}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Plant-008
   m_TagString: Untagged
@@ -30374,6 +30556,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 936363318}
   m_Mesh: {fileID: 4301738, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &936363322
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936363318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56.9844971, y: 151.751556, z: 57.666893}
+  m_Center: {x: .24307251, y: 75.8757782, z: -.148067474}
 --- !u!1 &936954923
 GameObject:
   m_ObjectHideFlags: 0
@@ -30952,6 +31146,7 @@ GameObject:
   - 4: {fileID: 979356062}
   - 33: {fileID: 979356064}
   - 23: {fileID: 979356063}
+  - 65: {fileID: 979356065}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-DeskChair-003
   m_TagString: Untagged
@@ -31000,6 +31195,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 979356061}
   m_Mesh: {fileID: 4301730, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &979356065
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 979356061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 68.0759277, y: 110.590645, z: 60.4292603}
+  m_Center: {x: 0, y: 53.3146019, z: -20.333313}
 --- !u!1 &983910058
 GameObject:
   m_ObjectHideFlags: 0
@@ -32134,6 +32341,7 @@ GameObject:
   - 4: {fileID: 1020357108}
   - 33: {fileID: 1020357110}
   - 23: {fileID: 1020357109}
+  - 65: {fileID: 1020357111}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Chair-004
   m_TagString: Untagged
@@ -32182,6 +32390,136 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1020357107}
   m_Mesh: {fileID: 4301712, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1020357111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020357107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 87.9949951, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224517822, y: 65.7995682, z: .000244140625}
+--- !u!1 &1021157187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 167014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+  m_PrefabInternal: {fileID: 2054545290}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1021157193}
+  - 33: {fileID: 1021157192}
+  - 136: {fileID: 1021157191}
+  - 23: {fileID: 1021157190}
+  - 114: {fileID: 1021157189}
+  - 148: {fileID: 1021157188}
+  m_Layer: 2
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!148 &1021157188
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14818456, guid: 415e12d7eb11c5a45b5e374145af298f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054545290}
+  m_GameObject: {fileID: 1021157187}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 1021157193}
+  m_ViewID:
+    m_ID: 21
+    m_Type: 1
+--- !u!114 &1021157189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054545290}
+  m_GameObject: {fileID: 1021157187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067686898e3bd774a80b1fe66ce24720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1643373725}
+  - {fileID: 1905541843}
+  - {fileID: 1751962160}
+  - {fileID: 1740789865}
+  - {fileID: 2098689644}
+  - {fileID: 66343795}
+  - {fileID: 995700252}
+  - {fileID: 823385677}
+  - {fileID: 1058265221}
+  - {fileID: 15423612}
+  - {fileID: 789168857}
+  - {fileID: 567959884}
+  theSpy: {fileID: 0}
+  patrolSpeed: 10
+  chaseSpeed: 20
+  timeToWait: 0
+  myState: 0
+--- !u!23 &1021157190
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2367014, guid: 415e12d7eb11c5a45b5e374145af298f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054545290}
+  m_GameObject: {fileID: 1021157187}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 0fb5a9f183940ef458ca039d2acb8902, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &1021157191
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13667014, guid: 415e12d7eb11c5a45b5e374145af298f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054545290}
+  m_GameObject: {fileID: 1021157187}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!33 &1021157192
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3367014, guid: 415e12d7eb11c5a45b5e374145af298f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2054545290}
+  m_GameObject: {fileID: 1021157187}
+  m_Mesh: {fileID: 4300000, guid: 8beae32e527a9be49b8d50e2a50a91d4, type: 3}
+--- !u!4 &1021157193
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+  m_PrefabInternal: {fileID: 2054545290}
+  m_GameObject: {fileID: 1021157187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 205, y: 0, z: -255}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &1022350808
 GameObject:
   m_ObjectHideFlags: 0
@@ -35455,110 +35793,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1112955987}
   m_Mesh: {fileID: 4300176, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
---- !u!1001 &1118094264
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 205
-      objectReference: {fileID: 0}
-    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -255
-      objectReference: {fileID: 0}
-    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 14818456, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_ViewID.m_ID
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 14818456, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: m_ViewID.m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 1643373725}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 1905541843}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1751962160}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 1740789865}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[4]
-      value: 
-      objectReference: {fileID: 2098689644}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[5]
-      value: 
-      objectReference: {fileID: 66343795}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[6]
-      value: 
-      objectReference: {fileID: 995700252}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[7]
-      value: 
-      objectReference: {fileID: 823385677}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[8]
-      value: 
-      objectReference: {fileID: 1058265221}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[9]
-      value: 
-      objectReference: {fileID: 15423612}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[10]
-      value: 
-      objectReference: {fileID: 789168857}
-    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-      propertyPath: waypoints.Array.data[11]
-      value: 
-      objectReference: {fileID: 567959884}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
-  m_RootGameObject: {fileID: 19375257}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1119935795
 GameObject:
   m_ObjectHideFlags: 0
@@ -35924,6 +36158,7 @@ GameObject:
   - 4: {fileID: 1126600810}
   - 33: {fileID: 1126600812}
   - 23: {fileID: 1126600811}
+  - 65: {fileID: 1126600813}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Plant-002
   m_TagString: Untagged
@@ -35972,6 +36207,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1126600809}
   m_Mesh: {fileID: 4301674, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1126600813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126600809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56.9844971, y: 151.751556, z: 57.666893}
+  m_Center: {x: .24307251, y: 75.8757782, z: -.148067474}
 --- !u!1 &1127484752
 GameObject:
   m_ObjectHideFlags: 0
@@ -37318,6 +37565,7 @@ GameObject:
   - 4: {fileID: 1157885928}
   - 33: {fileID: 1157885930}
   - 23: {fileID: 1157885929}
+  - 65: {fileID: 1157885931}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-002
   m_TagString: Untagged
@@ -37366,6 +37614,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1157885927}
   m_Mesh: {fileID: 4301690, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1157885931
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1157885927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &1158379564
 GameObject:
   m_ObjectHideFlags: 0
@@ -38486,6 +38746,7 @@ GameObject:
   - 4: {fileID: 1199349450}
   - 33: {fileID: 1199349452}
   - 23: {fileID: 1199349451}
+  - 65: {fileID: 1199349453}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Plant-005
   m_TagString: Untagged
@@ -38534,6 +38795,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1199349449}
   m_Mesh: {fileID: 4301714, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1199349453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1199349449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56.9844971, y: 151.751556, z: 57.666893}
+  m_Center: {x: .24307251, y: 75.8757782, z: -.148067474}
 --- !u!1 &1201923316
 GameObject:
   m_ObjectHideFlags: 0
@@ -39538,6 +39811,7 @@ GameObject:
   - 4: {fileID: 1241657755}
   - 33: {fileID: 1241657757}
   - 23: {fileID: 1241657756}
+  - 65: {fileID: 1241657758}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Plant-006
   m_TagString: Untagged
@@ -39586,6 +39860,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1241657754}
   m_Mesh: {fileID: 4301720, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1241657758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1241657754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56.9844971, y: 151.751556, z: 57.666893}
+  m_Center: {x: .24307251, y: 75.8757782, z: -.148067474}
 --- !u!1 &1246786587
 GameObject:
   m_ObjectHideFlags: 0
@@ -41939,6 +42225,7 @@ GameObject:
   - 4: {fileID: 1329141491}
   - 33: {fileID: 1329141493}
   - 23: {fileID: 1329141492}
+  - 65: {fileID: 1329141494}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Bin-003
   m_TagString: Untagged
@@ -41987,6 +42274,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1329141490}
   m_Mesh: {fileID: 4301722, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1329141494
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329141490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 51.7826309, y: 113.024353, z: 52.1461563}
+  m_Center: {x: 1.52587891e-05, y: 56.5121765, z: -.000244140625}
 --- !u!1 &1329921475
 GameObject:
   m_ObjectHideFlags: 0
@@ -44133,7 +44432,7 @@ Transform:
   m_LocalScale: {x: 10, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!148 &1399975924
 NetworkView:
   m_ObjectHideFlags: 0
@@ -45351,6 +45650,7 @@ GameObject:
   - 4: {fileID: 1424542959}
   - 33: {fileID: 1424542961}
   - 23: {fileID: 1424542960}
+  - 65: {fileID: 1424542962}
   m_Layer: 0
   m_Name: COLLISION-OnDesk-1x1-Computer-003
   m_TagString: Untagged
@@ -45399,6 +45699,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1424542958}
   m_Mesh: {fileID: 4301852, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1424542962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424542958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 88.052063, y: 66.3812561, z: 70.8635559}
+  m_Center: {x: -2.47732544, y: 106.829773, z: .276748657}
 --- !u!1 &1425371972
 GameObject:
   m_ObjectHideFlags: 0
@@ -53761,6 +54073,7 @@ GameObject:
   - 4: {fileID: 1672809811}
   - 33: {fileID: 1672809813}
   - 23: {fileID: 1672809812}
+  - 65: {fileID: 1672809814}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-DeskChair-001
   m_TagString: Untagged
@@ -53809,6 +54122,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1672809810}
   m_Mesh: {fileID: 4301626, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1672809814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1672809810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 68.075943, y: 110.590645, z: 60.4292755}
+  m_Center: {x: -.000122070312, y: 53.3146019, z: -20.3333187}
 --- !u!1 &1673709182
 GameObject:
   m_ObjectHideFlags: 0
@@ -54574,6 +54899,7 @@ GameObject:
   - 4: {fileID: 1691923718}
   - 33: {fileID: 1691923720}
   - 23: {fileID: 1691923719}
+  - 65: {fileID: 1691923721}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Chair-001
   m_TagString: Untagged
@@ -54622,6 +54948,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1691923717}
   m_Mesh: {fileID: 4301706, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1691923721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1691923717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 87.9949951, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224517822, y: 65.7995682, z: -2.33767026e-13}
 --- !u!1 &1693873580
 GameObject:
   m_ObjectHideFlags: 0
@@ -55088,6 +55426,7 @@ GameObject:
   - 4: {fileID: 1707987497}
   - 33: {fileID: 1707987499}
   - 23: {fileID: 1707987498}
+  - 65: {fileID: 1707987500}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Desk-005
   m_TagString: Untagged
@@ -55136,6 +55475,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1707987496}
   m_Mesh: {fileID: 4301726, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1707987500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1707987496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 199.039062, y: 76.2212677, z: 80}
+  m_Center: {x: -.272918701, y: 38.1106339, z: .0711669922}
 --- !u!1001 &1711561516
 Prefab:
   m_ObjectHideFlags: 0
@@ -55900,6 +56251,7 @@ GameObject:
   - 4: {fileID: 1731792916}
   - 33: {fileID: 1731792918}
   - 23: {fileID: 1731792917}
+  - 65: {fileID: 1731792919}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-010
   m_TagString: Untagged
@@ -55948,6 +56300,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1731792915}
   m_Mesh: {fileID: 4301742, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1731792919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731792915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &1734135097
 GameObject:
   m_ObjectHideFlags: 0
@@ -57909,6 +58273,7 @@ GameObject:
   - 4: {fileID: 1780604223}
   - 33: {fileID: 1780604225}
   - 23: {fileID: 1780604224}
+  - 65: {fileID: 1780604226}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Couch-007
   m_TagString: Untagged
@@ -57957,6 +58322,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1780604222}
   m_Mesh: {fileID: 4301670, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1780604226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780604222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 187.994965, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224502563, y: 65.7995682, z: .000122070312}
 --- !u!1 &1781064780
 GameObject:
   m_ObjectHideFlags: 0
@@ -59232,6 +59609,7 @@ GameObject:
   - 4: {fileID: 1817637242}
   - 33: {fileID: 1817637244}
   - 23: {fileID: 1817637243}
+  - 65: {fileID: 1817637245}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Lamp-006
   m_TagString: Untagged
@@ -59280,6 +59658,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1817637241}
   m_Mesh: {fileID: 4301698, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1817637245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817637241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.567627, y: 147.564453, z: 42.1708374}
+  m_Center: {x: 0, y: 73.7822266, z: -2.62127126e-13}
 --- !u!1 &1822774117
 GameObject:
   m_ObjectHideFlags: 0
@@ -60626,6 +61016,7 @@ GameObject:
   - 4: {fileID: 1866317417}
   - 33: {fileID: 1866317419}
   - 23: {fileID: 1866317418}
+  - 65: {fileID: 1866317420}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Banana-002
   m_TagString: Untagged
@@ -60674,6 +61065,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1866317416}
   m_Mesh: {fileID: 4301682, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1866317420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1866317416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 39.0559616, y: 207.338364, z: 69.148056}
+  m_Center: {x: -.000129699707, y: 103.669182, z: -1.52587927e-05}
 --- !u!1 &1869339030
 GameObject:
   m_ObjectHideFlags: 0
@@ -61039,6 +61442,7 @@ GameObject:
   - 4: {fileID: 1880153941}
   - 33: {fileID: 1880153943}
   - 23: {fileID: 1880153942}
+  - 65: {fileID: 1880153944}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Desk-003
   m_TagString: Untagged
@@ -61087,6 +61491,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1880153940}
   m_Mesh: {fileID: 4301704, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1880153944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1880153940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 199.039062, y: 76.2212677, z: 80}
+  m_Center: {x: -.272918701, y: 38.1106339, z: .0711669922}
 --- !u!1 &1888855576
 GameObject:
   m_ObjectHideFlags: 0
@@ -62363,6 +62779,7 @@ GameObject:
   - 4: {fileID: 1914897636}
   - 33: {fileID: 1914897638}
   - 23: {fileID: 1914897637}
+  - 65: {fileID: 1914897639}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Desk-004
   m_TagString: Untagged
@@ -62411,6 +62828,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1914897635}
   m_Mesh: {fileID: 4301724, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1914897639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1914897635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 199.039062, y: 76.2212677, z: 80}
+  m_Center: {x: -.272918701, y: 38.1106339, z: .0711669922}
 --- !u!1 &1917145438
 GameObject:
   m_ObjectHideFlags: 0
@@ -62421,6 +62850,7 @@ GameObject:
   - 4: {fileID: 1917145439}
   - 33: {fileID: 1917145441}
   - 23: {fileID: 1917145440}
+  - 65: {fileID: 1917145442}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x2-Couch-006
   m_TagString: Untagged
@@ -62469,6 +62899,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1917145438}
   m_Mesh: {fileID: 4301668, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1917145442
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1917145438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 187.994965, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224502563, y: 65.7995682, z: -2.33767026e-13}
 --- !u!1 &1919489025
 GameObject:
   m_ObjectHideFlags: 0
@@ -63673,6 +64115,7 @@ GameObject:
   - 4: {fileID: 1953681897}
   - 33: {fileID: 1953681899}
   - 23: {fileID: 1953681898}
+  - 65: {fileID: 1953681900}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Plant-001
   m_TagString: Untagged
@@ -63721,6 +64164,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1953681896}
   m_Mesh: {fileID: 4301672, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1953681900
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953681896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56.9844971, y: 151.751556, z: 57.666893}
+  m_Center: {x: .24307251, y: 75.8757782, z: -.148067474}
 --- !u!1 &1953835430
 GameObject:
   m_ObjectHideFlags: 0
@@ -65222,6 +65677,7 @@ GameObject:
   - 4: {fileID: 1991298434}
   - 33: {fileID: 1991298436}
   - 23: {fileID: 1991298435}
+  - 65: {fileID: 1991298437}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Plant-004
   m_TagString: Untagged
@@ -65270,6 +65726,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 1991298433}
   m_Mesh: {fileID: 4301678, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &1991298437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1991298433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56.9844971, y: 151.751556, z: 57.666893}
+  m_Center: {x: .24307251, y: 75.8757782, z: -.148067474}
 --- !u!1 &1993570272
 GameObject:
   m_ObjectHideFlags: 0
@@ -66606,6 +67074,110 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 2050430963}
   m_Mesh: {fileID: 4301578, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!1001 &2054545290
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 205
+      objectReference: {fileID: 0}
+    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -255
+      objectReference: {fileID: 0}
+    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1643373725}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1905541843}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1751962160}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1740789865}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 2098689644}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 66343795}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[6]
+      value: 
+      objectReference: {fileID: 995700252}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[7]
+      value: 
+      objectReference: {fileID: 823385677}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[8]
+      value: 
+      objectReference: {fileID: 1058265221}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[9]
+      value: 
+      objectReference: {fileID: 15423612}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[10]
+      value: 
+      objectReference: {fileID: 789168857}
+    - target: {fileID: 11467014, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: waypoints.Array.data[11]
+      value: 
+      objectReference: {fileID: 567959884}
+    - target: {fileID: 14818456, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 14818456, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 415e12d7eb11c5a45b5e374145af298f, type: 2}
+  m_RootGameObject: {fileID: 1021157187}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &2056673894
 GameObject:
   m_ObjectHideFlags: 0
@@ -67823,6 +68395,7 @@ GameObject:
   - 4: {fileID: 2089330217}
   - 33: {fileID: 2089330219}
   - 23: {fileID: 2089330218}
+  - 65: {fileID: 2089330220}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Plant-007
   m_TagString: Untagged
@@ -67871,6 +68444,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 2089330216}
   m_Mesh: {fileID: 4301736, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &2089330220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2089330216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56.9844971, y: 151.751556, z: 57.666893}
+  m_Center: {x: .24307251, y: 75.8757782, z: -.148067474}
 --- !u!1 &2091976793
 GameObject:
   m_ObjectHideFlags: 0
@@ -68224,6 +68809,7 @@ GameObject:
   - 4: {fileID: 2101600411}
   - 33: {fileID: 2101600413}
   - 23: {fileID: 2101600412}
+  - 65: {fileID: 2101600414}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Plant-003
   m_TagString: Untagged
@@ -68272,6 +68858,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 2101600410}
   m_Mesh: {fileID: 4301676, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &2101600414
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2101600410}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 56.9844971, y: 151.751556, z: 57.666893}
+  m_Center: {x: .24307251, y: 75.8757782, z: -.148067474}
 --- !u!1 &2102280187
 GameObject:
   m_ObjectHideFlags: 0
@@ -69276,6 +69874,7 @@ GameObject:
   - 4: {fileID: 2139663131}
   - 33: {fileID: 2139663133}
   - 23: {fileID: 2139663132}
+  - 65: {fileID: 2139663134}
   m_Layer: 0
   m_Name: COLLISION-Obstacle-1x1-Chair-003
   m_TagString: Untagged
@@ -69324,6 +69923,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662741503}
   m_GameObject: {fileID: 2139663130}
   m_Mesh: {fileID: 4301710, guid: 536c448c0266ea34ca32f316ba594d4c, type: 3}
+--- !u!65 &2139663134
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2139663130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 87.9949951, y: 121.268951, z: 87.6923828}
+  m_Center: {x: -.224517822, y: 65.7995682, z: -2.33767026e-13}
 --- !u!1 &2140565714
 GameObject:
   m_ObjectHideFlags: 0

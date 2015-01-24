@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9532592}
   - 135: {fileID: 13532592}
   - 114: {fileID: 11432592}
+  - 148: {fileID: 14804222}
   m_Layer: 0
   m_Name: Food-003-Spaghetti
   m_TagString: Untagged
@@ -97,6 +98,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: 0, y: 8.32335567, z: 0}
+--- !u!148 &14804222
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132592}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 432592}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

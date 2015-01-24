@@ -2011,10 +2011,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae87b6e03f89894d9a0b4922b945cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftCap: 270
-  rightCap: -1.00179122e-05
+  DownRotAngle: 25
+  RotAngle: 90
   rotSpeed: 5
   waitFor: 1
+  miniMapImage: {fileID: 0}
   currentDirection: 0
 --- !u!23 &319715471
 Renderer:
@@ -4044,10 +4045,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae87b6e03f89894d9a0b4922b945cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftCap: 180
-  rightCap: 270
+  DownRotAngle: 25
+  RotAngle: 90
   rotSpeed: 5
   waitFor: 1
+  miniMapImage: {fileID: 0}
   currentDirection: 0
 --- !u!23 &639102152
 Renderer:
@@ -4349,6 +4351,7 @@ RectTransform:
   - {fileID: 1109180144}
   - {fileID: 548313779}
   - {fileID: 90518047}
+  - {fileID: 1430319421}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
@@ -6269,9 +6272,9 @@ MonoBehaviour:
   OculusGame: 0
   myRole: 0
   secCams:
-  - {fileID: 319715473}
-  - {fileID: 639102154}
-  - {fileID: 1799797364}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   theSpy: {fileID: 0}
   OculusPlayer: {fileID: 126706, guid: 49166a637e4831c49883adbcf87c17c0, type: 2}
   NonOcPlayer: {fileID: 100002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
@@ -6280,6 +6283,11 @@ MonoBehaviour:
   FirstDigText: {fileID: 665172075}
   SecondDigText: {fileID: 1021805729}
   CurCamText: {fileID: 26476478}
+  food: {fileID: 104914, guid: 864d4e772101b8d448e8e854da734907, type: 2}
+  cutlery:
+  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
+  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
+  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
 --- !u!4 &868391801
 Transform:
   m_ObjectHideFlags: 0
@@ -10665,6 +10673,75 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424690270}
   m_Mesh: {fileID: 4300192, guid: 5b54071a56a15e042954edf28095a371, type: 3}
+--- !u!1 &1430319420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 105898, guid: c91286d46e235da458f9ee1c2dfda52e, type: 2}
+  m_PrefabInternal: {fileID: 1401770765}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1430319421}
+  - 222: {fileID: 1430319423}
+  - 114: {fileID: 1430319422}
+  m_Layer: 5
+  m_Name: MessageText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1430319421
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22405898, guid: c91286d46e235da458f9ee1c2dfda52e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1401770765}
+  m_GameObject: {fileID: 1430319420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 655084555}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: -71.9000015, y: 60}
+  m_SizeDelta: {x: 200, y: 30}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1430319422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11405898, guid: c91286d46e235da458f9ee1c2dfda52e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1401770765}
+  m_GameObject: {fileID: 1430319420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1430319423
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22205898, guid: c91286d46e235da458f9ee1c2dfda52e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1401770765}
+  m_GameObject: {fileID: 1430319420}
 --- !u!1 &1432214064
 GameObject:
   m_ObjectHideFlags: 0
@@ -11527,7 +11604,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d53abda25da6c7d4590b6017563cff08, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -12762,10 +12839,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae87b6e03f89894d9a0b4922b945cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftCap: 7.62939453e-06
-  rightCap: 90.0000076
+  DownRotAngle: 25
+  RotAngle: 90
   rotSpeed: 5
   waitFor: 1
+  miniMapImage: {fileID: 0}
   currentDirection: 0
 --- !u!23 &1799797362
 Renderer:
@@ -13737,10 +13815,13 @@ MonoBehaviour:
   - {fileID: 369832589}
   - {fileID: 269799218}
   - {fileID: 1085646307}
+  - {fileID: 0}
+  - {fileID: 0}
   theSpy: {fileID: 0}
   patrolSpeed: 10
   chaseSpeed: 20
   timeToWait: 0
+  detectionRange: 30
   myState: 0
 --- !u!23 &1920168514
 Renderer:
@@ -13755,7 +13836,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 0fb5a9f183940ef458ca039d2acb8902, type: 2}
+  - {fileID: 2100000, guid: 11e1b0761b36c474d9159eb9a64f3b37, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -13773,10 +13854,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
+  m_Radius: 4
+  m_Height: 20
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 10, z: 0}
 --- !u!33 &1920168516
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13793,7 +13874,7 @@ Transform:
   m_GameObject: {fileID: 1920168512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -95, y: .400000006, z: 15}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

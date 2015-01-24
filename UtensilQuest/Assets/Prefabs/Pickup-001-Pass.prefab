@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9541264}
   - 114: {fileID: 11441264}
   - 135: {fileID: 13541264}
+  - 148: {fileID: 14834858}
   m_Layer: 0
   m_Name: Pickup-001-Pass
   m_TagString: Untagged
@@ -98,6 +99,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: -.051123023, y: 7.91901016, z: -.134063721}
+--- !u!148 &14834858
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141264}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 441264}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

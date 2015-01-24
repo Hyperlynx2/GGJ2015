@@ -49,11 +49,11 @@ public class GameManager : MonoBehaviour
 			}
 			Destroy (GameObject.Find("CameraGUI"));
 			//spawn the pickups and food
-			Instantiate (food, GameObject.Find("FOOD-LOCATION").transform.position, Quaternion.identity);
+			Network.Instantiate (food, GameObject.Find("FOOD-LOCATION").transform.position, Quaternion.identity, 0);
 			GameObject[] pickupSpots = GameObject.FindGameObjectsWithTag("PickupPos");
 			for(int i = 0; i < cutlery.Length; i ++)
 			{
-				Instantiate(cutlery[i], pickupSpots[i].transform.position, Quaternion.identity);
+				Network.Instantiate(cutlery[i], pickupSpots[i].transform.position, Quaternion.identity, 0);
 			}
 		}
         else  //I'm the handler, set up the cameras
@@ -389,7 +389,7 @@ public class GameManager : MonoBehaviour
 			//turn off the player's cameras
 			foreach (Camera cam in theSpy.GetComponentsInChildren<Camera>())
 			{
-                cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
+                cam.enabled = false;
 			}
 		}
 	}

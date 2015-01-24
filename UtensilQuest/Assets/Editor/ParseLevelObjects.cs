@@ -136,10 +136,10 @@ public class ParseLevelObjects : MonoBehaviour
 
         if (!bKeepValues)
         {
-            scr.rightCap = obj.transform.eulerAngles.y;
-            scr.leftCap = (360 + (obj.transform.eulerAngles.y - 90)) % 360; //Make sure this value is from 0-360
-            scr.rotSpeed = 5;
-            scr.waitFor = 1;
+            //scr.rightCap = obj.transform.eulerAngles.y;
+            //scr.leftCap = (360 + (obj.transform.eulerAngles.y - 90)) % 360; //Make sure this value is from 0-360
+            //scr.rotSpeed = 5;
+            //scr.waitFor = 1;
         }
 
         string cameraID = obj.name.Substring("SecurityCam-Top-".Length, 3);

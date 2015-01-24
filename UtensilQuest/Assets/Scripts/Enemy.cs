@@ -24,12 +24,17 @@ public class Enemy : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		theSpy = GameObject.Find ("Player(Clone)");
+
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
+		if(theSpy == null)
+		{
+			theSpy = GameObject.Find ("Player(Clone)");
+		}
+
 		if(Network.isClient)
 		{
 			return;

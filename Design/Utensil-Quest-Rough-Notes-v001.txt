@@ -12,12 +12,15 @@ Level gameplay overview (from Agent POV) :
   - Level starts
     ~ Given objective (atm, always "Obtain Cutlery and Return to your food")
   - Navigate level
-    ~ Explore to find Cutlery object
+    ~ Explore to find Cutlery objects
+      - 2 cutlery objective objects (knife and fork)
+      - Cutlery placed randomly among a series of potential locations as defined in level data
     ~ No mini map
     ~ Avoid being seen by guards
   - Collect cutlery
   - Return to level Start
-  - Win
+    ~ Level start marker (ie, meal) is randomly different each level load
+  - Transition to next level
 
 
 Guard :
@@ -25,16 +28,28 @@ Guard :
   - Moves at a fixed rate (to be set by a property of the first path node)
   - May pause at each path node and look around (see level data for path node settings)
   - Never deviates from fixed path
-  - Has a sight cone (wedge really), which is represented on the ground in front of him
+  - Has a sight cone (wedge really)
+    ~ Sight cones have no visible representation
 
-  Guard encounteres a locked door (that has been hacked shut)
-    - 3 options here, listed in order from (probably) best to worst
-      ~ Guard stops on the spot and waits for door to open
-      ~ Guard bounces and goes back along their route the way they came
-        (and in the process effectively reversing their patrol)
-      ~ Each door has a seperate patrol path associated with it that the guard falls back to when door locked
-        (this one is probably too out of scope and hard to do well)
+  Guard encounteres a locked door
+    - Stop
+    - "Unlock" door (just stand there for a while plaing an anim or whatever)
+    - Go through door
+    - Lock door behind after going through
+      ~ This is basically just a big slow down for any guard who encounters a locked door
+      ~ Provides notable benefit to hacking shut a door in front of a guard
 
+  Guard Encounters Player
+    - Play some "Guard Alerted" sound
+    - a couple of 100 ms later, round ends with;
+      ~ Game over screen (Image of player being escorted away by guard)
+      ~ Some stats
+        - Round duration
+        - Doors hacked
+        - Cameras hacked
+        - Items collected
+        - Alarms tripped
+      ~ Level Restarts
 
 Agent :
   Controls and POV
@@ -79,9 +94,10 @@ Handler :
       ~ POV is representative of video cameras in pre determined locations throughout the level
         - Fixed location
         - Wide FOV
-        - Can only pan horizontally (using A + D probably)
+        - Can only pan horizontally
         - Camera pan is very slow compared to standard FPS camera
         - Horizontal pan of camera is restricted to a set arc (say 120 degrees or whatever)
+        - Pan is not actually player controlled, and just ping pongs between min and max extents
     - Has a mouse cursor to click on things
       (This is the only way Handlers can interact with the world)
 
@@ -128,7 +144,7 @@ Handler :
       ~ If we nail those to, and make them fun with time to spare, we can assess other features
 
   Hacking Doors
-    - Click on a door to lock or unlock it
+    - Click on a door to lock or unlock it (lock/unlock = open/closed)
     - Hacking a door has a mini game associated with it (Minigame details TBA)
     - Successfully hacking a door simply toggles it from locked to unlocked and vice versa
     - Doors may be toggled via hacking any number of times
@@ -139,8 +155,18 @@ Handler :
     - A door may not be hacked by another player while it is in the process of being hacked
       (Or still in cool down from the last hack)
 
+    - Door hack failure results in
+      ~ An alarm sound plays
+      ~ All Guard node wait times are ignored (for a set period of time)
+      ~ All Guard movement speeds increase (for a set period of time)
+
   Hacking Cameras
-    - For now, lets just say it's identical to hacking doors, with the only difference being instead of toggling the door stat from locked to unlocked and vice versa, a successful hack lets you inhabit the camera. A failed hack then implies you stay where you are
+    - For now, lets just say it's identical to hacking doors, with the only difference being the result of fail/success
+      ~ Success - you now inhabit that camera
+      ~ Failure - don't switch camera
+                - current camera stops moving for a period of time
+                - current camera is disrupted with static and poor quality for a period of time
+
     - Also discussed was the posibility of camera swapping having a "universal cooldown", where no player could hack any camera for a period of time after any player made a successful hack (not just themselves)
 
 

@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
 	private Vector3 distanceToPlayer;
 	private float detectionDot;
 	private Door lastDoor;
+	public int detectionRange;
 
 	public enum states
 	{
@@ -46,7 +47,7 @@ public class Enemy : MonoBehaviour
 			//if I can see the player, I'll chase him
 			distanceToPlayer = theSpy.transform.position - transform.position;
 			detectionDot = Vector3.Dot (distanceToPlayer.normalized, transform.TransformDirection (Vector3.forward)); 
-			if(detectionDot > 0.5f && distanceToPlayer.magnitude < 10 && !Physics.Linecast(transform.position, theSpy.transform.position)) //and the linecast; add that later when I cbf with layermasking
+			if(detectionDot > 0.5f && distanceToPlayer.magnitude < detectionRange && !Physics.Linecast(transform.position, theSpy.transform.position)) //and the linecast; add that later when I cbf with layermasking
 			{
 				myState = states.chasing;
 			}

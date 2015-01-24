@@ -78,8 +78,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 209.542908, y: 0, z: -166.435684}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 254.474045, y: 0, z: -173.807861}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 400004}
   - {fileID: 486120}
@@ -253,7 +253,7 @@ MonoBehaviour:
   canControl: 1
   useFixedUpdate: 1
   movement:
-    maxForwardSpeed: 6
+    maxForwardSpeed: 15
     maxSidewaysSpeed: 6
     maxBackwardsSpeed: 6
     slopeSpeedMultiplier:
@@ -353,6 +353,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  invGUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentSlot: 0
 --- !u!124 &12400000
 Behaviour:
@@ -371,13 +376,13 @@ CharacterController:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: .5
+  m_Height: 1.5
+  m_Radius: .300000012
   m_SlopeLimit: 45
   m_StepOffset: .400000006
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: .800000012, z: 0}
 --- !u!1002 &14300001
 EditorExtensionImpl:
   serializedVersion: 6

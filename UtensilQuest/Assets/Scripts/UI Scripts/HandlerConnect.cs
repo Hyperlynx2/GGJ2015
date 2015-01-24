@@ -3,18 +3,14 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class HandlerConnect : MonoBehaviour {
-    public InputField IPBox;
+    public Text IPBox;
 
     public Text ConnectedNotification;
     public Text ErrorNotifaction;
 
     public Button ConnectButton;
 
-    void Start()
-    {
-        IPBox.text = PlayerPrefs.GetString("lastUsedIP", "127.0.0.1");
-    }
-
+	// Use this for initialization
 	public void OnConnectButtonClicked()
     {
         NetworkConnectionError err = Network.Connect(IPBox.text, 16048, "Dadnewt");
@@ -28,7 +24,7 @@ public class HandlerConnect : MonoBehaviour {
     [RPC]
     void RPC_OnServerStartGame(string someInfo)
     {
-        Application.LoadLevel("4 - MainGame");
+        Application.LoadLevel("4 - Test Level");
     }
 
     void OnConnectedToServer()
@@ -38,7 +34,6 @@ public class HandlerConnect : MonoBehaviour {
         ErrorNotifaction.text = "";
 
         ConnectButton.interactable = false;
-        PlayerPrefs.SetString("lastUsedIP", IPBox.text);
     }
 
     void OnDisconnectedFromServer(NetworkDisconnection disconnect)

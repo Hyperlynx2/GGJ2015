@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     void HandlerMechanics()
     {
 		//double check the player is turned off.
-		//TurnOffPlayer ();
+		TurnOffPlayer ();
 
         //press tab to cycle through the cameras
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -149,7 +149,14 @@ public class GameManager : MonoBehaviour
 	{
 		if (theSpy == null) //set theSpy if it's null, just to avoid errors, especially with the next part.
 		{
-			theSpy = GameObject.Find("Player(Clone)");
+			if(GameObject.Find("Player(Clone)"))
+			{
+				theSpy = GameObject.Find("Player(Clone)");
+			}
+			else
+			{
+				return;
+			}
 
 			//turn off the Oculus prefab components if we're playing an oculus game
 			if(OculusGame)

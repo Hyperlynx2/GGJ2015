@@ -90,7 +90,7 @@ namespace HackingGame
 			_grid = new PathPiece[gridRows, gridColumns];
 			
 			System.Random random = new System.Random();
-			
+
 			_goalRow = random.Next(0, gridRows);
 			_startRow = random.Next (0, gridRows);
 
@@ -98,14 +98,12 @@ namespace HackingGame
 
 			Stack<PathPiece> path = new Stack<PathPiece>();
 
-			//TODO: put this piece creation stuff in a helper.
-
 			PathPiece currentPiece = NewPiece();
 
 			path.Push(currentPiece);
 
 			currentPiece.allowRight = true;
-		_grid[currentPiece.row, currentPiece.col] = currentPiece;
+			_grid[currentPiece.row, currentPiece.col] = currentPiece;
 
 			bool reachedStart = false;
 			while(!reachedStart)
@@ -153,6 +151,7 @@ namespace HackingGame
 				{
 					_grid[newRow, newCol] = newPiece;
 					currentPiece = newPiece;
+					path.Push(currentPiece);
 
 					if(newCol == 0 && newRow == _startRow)
 					{
@@ -160,7 +159,7 @@ namespace HackingGame
 						reachedStart = true;
 					}
 
-					path.Push(currentPiece);
+
 				}
 				else
 				{
@@ -177,7 +176,9 @@ namespace HackingGame
 					&& _grid[newRow, newCol + 1] != null) //up					   
 					{
 						print("backtracking");
-						currentPiece = path.Pop();
+						path.Pop();
+						_grid[currentPiece.row, currentPiece.col] = null;
+						currentPiece = path.Peek();
 					}
 				}
 			}

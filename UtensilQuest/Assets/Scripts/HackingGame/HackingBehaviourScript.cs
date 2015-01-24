@@ -17,6 +17,12 @@ namespace HackingGame
 		public const string PIVOT_POINT = "Pivot point";
 
 		/// <summary>
+		/// Percentage of how much to favour the more direct path to the goal when building the
+		/// solution. If the d100 roll is below this, go for the short path. Otherwise go random.
+		/// </summary>
+		public double shortPathWeight = 0.5;
+
+		/// <summary>
 		/// Prefab to use for game pieces.
 		/// </summary>
 		public GameObject piecePrefab;
@@ -121,27 +127,50 @@ namespace HackingGame
 				newPiece.row = previousPiece.row;
 				newPiece.col = previousPiece.col;
 
-				DIRECTION dir = (DIRECTION)random.Next(0,4);
+				DIRECTION dir;
+
+				if(random.NextDouble() < shortPathWeight)
+				{
+					//try for whichever is most direct.
+
+					if(newPiece.row > _startRow)
+					{
+						dir = DIRECTION.DOWN;
+					}
+					else if(newPiece.row < _startRow)
+					{
+						dir = DIRECTION.UP;
+					}
+					else
+					{
+						//assume we're trying to go left, towards the start.
+
+						dir = DIRECTION.LEFT;
+					}
+				}
+				else
+				{
+					dir = (DIRECTION)random.Next(0,4);
+				}
 
 				switch(dir)
 				{
 				case DIRECTION.UP:
-					newPiece.col++;
-					break;
-
-				case DIRECTION.RIGHT:
 					newPiece.row++;
 					break;
 
+				case DIRECTION.RIGHT:
+					newPiece.col++;
+					break;
+
 				case DIRECTION.DOWN:
-					newPiece.col--;
+					newPiece.row--;
 					break;
 
 				case DIRECTION.LEFT:
-					newPiece.row--;
+					newPiece.col--;
 					break;
 				}
-
 
 				print("Next piece: (" + newPiece.row + "," + newPiece.col + ")?");
 
@@ -171,8 +200,7 @@ namespace HackingGame
 					&& (previousPiece.col + 1 >= gridColumns || _grid[previousPiece.row, previousPiece.col + 1] != null)) //can't go up					   
 					{
 						print("backtracking");
-						path.Pop();
-						//_grid[currentPiece.row, currentPiece.col] = null; //don't clear this. use it to see where we've been
+						Destroy(path.Pop().gameObject);
 						previousPiece = path.Peek();
 					}
 				}

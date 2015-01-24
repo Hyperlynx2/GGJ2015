@@ -372,6 +372,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 2041550860}
+  - 114: {fileID: 2041550861}
   m_Layer: 5
   m_Name: Pivot
   m_TagString: Untagged
@@ -396,3 +397,22 @@ RectTransform:
   m_AnchoredPosition: {x: -371, y: -194}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &2041550861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041550859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374468d6a78439d4695026fac05d06a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  live: 0
+  allowUp: 0
+  allowRight: 0
+  allowDown: 0
+  allowLeft: 0
+  row: 0
+  col: 0
+  _board: {fileID: 0}

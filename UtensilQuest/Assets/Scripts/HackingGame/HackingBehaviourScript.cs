@@ -180,15 +180,14 @@ namespace HackingGame
 
 			//TODO: now add obstacles.
 
-			return; //TODO: remove after testing
-
-
 			//first piece in the chain always plugs in to the left wall.
 			path.Peek().allowLeft = true; 
 
 			while(path.Count > 1)
 			{
+				//pop the piece from the pathway stack, and also remove it from the board.
 				PathPiece current = path.Pop();
+				_grid[current.row, current.col] = null;
 				PathPiece next = path.Peek();
 
 				if(next.row < current.row)
@@ -223,6 +222,7 @@ namespace HackingGame
 			PathPiece last = path.Pop();
 			last.allowRight = true;
 			_allPieces.Add(last);
+			_grid[last.row, last.col] = null;
 
 			//TODO: shuffle the pieces?
 

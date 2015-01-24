@@ -127,8 +127,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 254.25, y: .0199999996, z: -173.059998}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalPosition: {x: 258.255493, y: 2.65471101e-07, z: -198.597748}
+  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children:
   - {fileID: 426708}
   - {fileID: 426714}
@@ -178,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .546000004, z: .108000003}
+  m_LocalPosition: {x: 0, y: 15.2399998, z: .970000029}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426716}
@@ -286,7 +286,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: d09fc41512b033d4a961e124135cd003, type: 2}
+  - {fileID: 2100000, guid: 11e1b0761b36c474d9159eb9a64f3b37, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -444,6 +444,7 @@ MonoBehaviour:
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   invGUI: []
+  messageText: {fileID: 0}
   currentSlot: 0
 --- !u!143 &14326706
 CharacterController:
@@ -452,13 +453,13 @@ CharacterController:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   serializedVersion: 2
-  m_Height: 1.5
-  m_Radius: .300000012
+  m_Height: 18
+  m_Radius: 3
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .00999999978
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: .800000012, z: 0}
+  m_Center: {x: 0, y: 9, z: 0}
 --- !u!148 &14826706
 NetworkView:
   m_ObjectHideFlags: 1

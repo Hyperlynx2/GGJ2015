@@ -14,10 +14,11 @@ public class Enemy : MonoBehaviour
 	public int timeToWait;
 	private Vector3 distanceToPlayer;
 	private float detectionDot;
+	private Door lastDoor;
 
 	public enum states
 	{
-		patrolling, chasing, waiting,
+		patrolling, chasing, waiting, unlocking,
 	}
 	public states myState;
 
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
 		{
 			return;
 		}
+
 		if(theSpy != null)
 		{
 			//if I can see the player, I'll chase him
@@ -72,6 +74,19 @@ public class Enemy : MonoBehaviour
 				timeToWait = Random.Range(1,4);
 				myState = states.waiting;
 			}
+			//I've reached a door, if it's locked, unlock it.
+			RaycastHit hit;
+			if(Physics.Raycast(transform.position, Vector3.forward, out hit, 2))
+			{
+				if(hit.collider.GetComponent<Door>())
+				{
+					lastDoor = hit.collider.GetComponent<Door>();
+					if(lastDoor.isLocked)
+					{
+						myState = states.unlocking;
+					}
+				}
+			}
 		}
 
 		//I'm currently waiting
@@ -81,6 +96,20 @@ public class Enemy : MonoBehaviour
 			waitTimer += Time.smoothDeltaTime;
 			if(waitTimer >= timeToWait)
 			{
+				//reset my timer and go back to patrolling.
+				waitTimer = 0;
+				myState = states.patrolling;
+			}
+		}
+
+		//unlock the door
+		if(myState == states.unlocking)
+		{
+			//wait for how long I decided I'd wait (set in patrol state)
+			waitTimer += Time.smoothDeltaTime;
+			if(waitTimer >= 4)
+			{
+				lastDoor.SendMessage("Locking", false);
 				//reset my timer and go back to patrolling.
 				waitTimer = 0;
 				myState = states.patrolling;

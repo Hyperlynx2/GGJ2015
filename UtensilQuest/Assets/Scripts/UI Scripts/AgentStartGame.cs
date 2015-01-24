@@ -19,7 +19,7 @@ public class AgentStartGame : MonoBehaviour
     public void OnStartButtonClicked()
     {
         networkView.RPC("RPC_OnServerStartGame", RPCMode.Others, null);
-        Application.LoadLevel("4 - MainGame");
+        Application.LoadLevel("4 - Test Level");
     }
 
     void OnPlayerConnected(NetworkPlayer newPlayer)

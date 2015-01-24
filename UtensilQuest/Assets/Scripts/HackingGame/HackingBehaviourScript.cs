@@ -147,8 +147,8 @@ namespace HackingGame
 				print("Next piece: (" + newPiece.row + "," + newPiece.col + ")?");
 
 				//not off edge of board and no piece already there?
-				if(newPiece.row > 0 && newPiece.row < gridRows
-				&& newPiece.col > 0 && newPiece.col < gridColumns
+				if(newPiece.row >= 0 && newPiece.row < gridRows
+				&& newPiece.col >= 0 && newPiece.col < gridColumns
 				&& _grid[newPiece.row, newPiece.col] == null)
 				{
 					_grid[newPiece.row, newPiece.col] = newPiece;
@@ -164,8 +164,6 @@ namespace HackingGame
 				else
 				{
 					print("...invalid piece");
-
-					int currentCol = previousPiece.col;
 
 					//run out of room? backtrack up the stack.
 					if((previousPiece.row - 1 < 0 || _grid[previousPiece.row - 1, previousPiece.col] != null) //can't go left 

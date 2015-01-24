@@ -35,7 +35,7 @@ public class SecurityCamera : MonoBehaviour
 				{
 					if(hit.collider.GetComponent<Door>())
 					{
-						hit.collider.GetComponent<Door>().isLocked = !hit.collider.GetComponent<Door>().isLocked;
+						hit.collider.GetComponent<Door>().SendMessage("Locking", !hit.collider.GetComponent<Door>().isLocked);
 					}
 				}
 			}

@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
 				cam.enabled = false;
 				cam.GetComponent<AudioListener>().enabled = false;
 			}
+			Destroy (GameObject.Find("CameraGUI"));
 		}
         else  //I'm the handler, set up the cameras
         {

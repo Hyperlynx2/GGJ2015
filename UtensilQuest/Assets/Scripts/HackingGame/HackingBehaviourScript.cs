@@ -153,34 +153,29 @@ namespace HackingGame
 			    && _grid[newRow, newCol] == null)
 				{
 					_grid[newRow, newCol] = newPiece;
+
 					currentPiece = newPiece;
-					path.Push(currentPiece);
+					path.Push(newPiece);
 
 					if(newCol == 0 && newRow == _startRow)
 					{
 						newPiece.allowLeft = true;
 						reachedStart = true;
 					}
-
-
 				}
 				else
 				{
 					print("...invalid piece");
 
 					//run out of room? backtrack up the stack.
-					if(newRow - 1 > 0
-					&& newRow + 1 < gridRows
-					&& newCol - 1 > 0
-					&& newCol + 1 < gridColumns
-					&& _grid[newRow - 1, newCol] != null //left
-					&& _grid[newRow + 1, newCol] != null //right
-					&& _grid[newRow, newCol - 1] != null //down
-					&& _grid[newRow, newCol + 1] != null) //up					   
+					if( (newRow - 1 > 0 || _grid[newRow - 1, newCol] != null) //left
+					&& (newRow + 1 < gridRows || _grid[newRow + 1, newCol] != null) //right
+					&& (newCol - 1 > 0 || _grid[newRow, newCol - 1] != null ) //down
+					&& (newCol + 1 < gridColumns || _grid[newRow, newCol + 1] != null)) //up					   
 					{
 						print("backtracking");
 						path.Pop();
-						_grid[currentPiece.row, currentPiece.col] = null;
+						//_grid[currentPiece.row, currentPiece.col] = null; //don't clear this. use it to see where we've been
 						currentPiece = path.Peek();
 					}
 				}

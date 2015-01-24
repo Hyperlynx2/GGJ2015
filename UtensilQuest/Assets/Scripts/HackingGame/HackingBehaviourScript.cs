@@ -5,6 +5,14 @@ using System.Collections.Generic;
 namespace HackingGame
 {
 
+	enum DIRECTION
+	{
+		UP,
+		DOWN,
+		LEFT,
+		RIGHT
+	}
+
 	public class HackingBehaviourScript : MonoBehaviour
 	{
 		public const string PIVOT_POINT = "Pivot point";
@@ -98,68 +106,58 @@ namespace HackingGame
 
 			Stack<PathPiece> path = new Stack<PathPiece>();
 
-			PathPiece currentPiece = NewPiece();
+			PathPiece previousPiece = NewPiece();
 
-			currentPiece.row = _goalRow;
-			currentPiece.col = gridColumns - 1;
+			previousPiece.row = _goalRow;
+			previousPiece.col = gridColumns - 1;
 
-			currentPiece.allowRight = true; //so that the current flows off the board to the right
-
-			_grid[currentPiece.row, currentPiece.col] = currentPiece;
-			path.Push(currentPiece);
+			_grid[previousPiece.row, previousPiece.col] = previousPiece;
+			path.Push(previousPiece);
 
 			bool reachedStart = false;
 			while(!reachedStart)
 			{
 				PathPiece newPiece = NewPiece();
-				newPiece.row = currentPiece.row;
-				newPiece.col = currentPiece.col;
+				newPiece.row = previousPiece.row;
+				newPiece.col = previousPiece.col;
 
-				switch(random.Next(0, 4))
+				DIRECTION dir = (DIRECTION)random.Next(0,4);
+
+				switch(dir)
 				{
-				case 0: //up
-					newPiece.col--;
-					currentPiece.allowUp = true;
-					newPiece.allowDown = true;
-					break;
-
-				case 1: //right
-					newPiece.row++;
-					currentPiece.allowRight = true;
-					newPiece.allowLeft = true;
-					break;
-
-				case 2: //down
+				case DIRECTION.UP:
 					newPiece.col++;
-					currentPiece.allowDown = true;
-					currentPiece.allowUp = true;
 					break;
 
-				case 3: //left
+				case DIRECTION.RIGHT:
+					newPiece.row++;
+					break;
+
+				case DIRECTION.DOWN:
+					newPiece.col--;
+					break;
+
+				case DIRECTION.LEFT:
 					newPiece.row--;
-					currentPiece.allowLeft = true;
-					newPiece.allowRight = true;
 					break;
 				}
 
-				int newRow = newPiece.row;
-				int newCol = newPiece.col;
+				//TODO: do the allow<Dir> stuff when unwinding the stack, not now.
 
-				print("Next piece: (" + newRow + "," + newCol + ")?");
+				print("Next piece: (" + newPiece.row + "," + newPiece.col + ")?");
 
 				//not off edge of board and no piece already there?
-				if(newRow > 0 && newRow < gridRows
-			    && newCol > 0 && newCol < gridColumns
-			    && _grid[newRow, newCol] == null)
+				if(newPiece.row > 0 && newPiece.row < gridRows
+				&& newPiece.col > 0 && newPiece.col < gridColumns
+				&& _grid[newPiece.row, newPiece.col] == null)
 				{
-					_grid[newRow, newCol] = newPiece;
+					_grid[newPiece.row, newPiece.col] = newPiece;
 
-					currentPiece = newPiece;
+					previousPiece = newPiece;
 					path.Push(newPiece);
 
-					if(newCol == 0 && newRow == _startRow)
+					if(newPiece.col == 0 && newPiece.row == _startRow)
 					{
-						newPiece.allowLeft = true;
 						reachedStart = true;
 					}
 				}
@@ -167,19 +165,18 @@ namespace HackingGame
 				{
 					print("...invalid piece");
 
-					int currentRow = currentPiece.row;
-					int currentCol = currentPiece.col;
+					int currentCol = previousPiece.col;
 
 					//run out of room? backtrack up the stack.
-					if((currentRow - 1 < 0 || _grid[currentRow - 1, currentCol] != null) //can't go left 
-					&& (currentRow + 1 > gridRows || _grid[currentRow + 1, currentCol] != null) //can't go right
-					&& (currentCol - 1 < 0 || _grid[currentRow, currentCol - 1] != null ) //can't go down
-				    && (currentCol + 1 > gridColumns || _grid[currentRow, currentCol + 1] != null)) //can't go up					   
+					if((previousPiece.row - 1 < 0 || _grid[previousPiece.row - 1, previousPiece.col] != null) //can't go left 
+					&& (previousPiece.row + 1 >= gridRows || _grid[previousPiece.row + 1, previousPiece.col] != null) //can't go right
+					&& (previousPiece.col - 1 < 0 || _grid[previousPiece.row, previousPiece.col - 1] != null ) //can't go down
+					&& (previousPiece.col + 1 >= gridColumns || _grid[previousPiece.row, previousPiece.col + 1] != null)) //can't go up					   
 					{
 						print("backtracking");
 						path.Pop();
 						//_grid[currentPiece.row, currentPiece.col] = null; //don't clear this. use it to see where we've been
-						currentPiece = path.Peek();
+						previousPiece = path.Peek();
 					}
 				}
 			}

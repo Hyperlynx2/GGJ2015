@@ -115,7 +115,7 @@ GameObject:
   - 33: {fileID: 3326706}
   - 23: {fileID: 2326706}
   m_Layer: 2
-  m_Name: Display
+  m_Name: character_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 255.220001, y: 0, z: -124.279999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426708}
@@ -446,7 +446,9 @@ MonoBehaviour:
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   invGUI: []
   messageText: {fileID: 0}
+  timerText: {fileID: 0}
   currentSlot: 0
+  levelLength: 0
 --- !u!114 &11458924
 MonoBehaviour:
   m_ObjectHideFlags: 1

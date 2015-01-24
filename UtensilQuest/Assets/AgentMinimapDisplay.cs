@@ -7,14 +7,16 @@ public class AgentMinimapDisplay : MonoBehaviour {
     public GameObject miniMapIconInstance;
     private MiniMapController _controller;
 
+    private GameObject meshNode;
+
     bool bIsFirstUpdate;
 	// Use this for initialization
 	void Start () {
         bIsFirstUpdate = true;
         _controller = GameObject.FindObjectOfType<MiniMapController>();
 
-        
 
+        meshNode = transform.Find("character_player").gameObject;
 	}
 	
 	// Update is called once per frame
@@ -39,11 +41,18 @@ public class AgentMinimapDisplay : MonoBehaviour {
 
         miniMapLocation = _controller.GetObjectMapLocation(transform.position);
         miniMapIconInstance.transform.localPosition = miniMapLocation;
+
+        SetMiniMapIconVisible(meshNode.renderer.isVisible);
+
 	}
 
     public void SetMiniMapIconVisible(bool bVisible)
     {
-        if(miniMapIconInstance)
+        if (miniMapIconInstance)
+        {
+
             miniMapIconInstance.transform.GetChild(0).GetComponent<Image>().enabled = bVisible;
+            miniMapIconInstance.transform.GetChild(1).GetComponent<Text>().enabled = bVisible;
+        }
     }
 }

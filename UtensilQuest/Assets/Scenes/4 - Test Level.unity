@@ -2213,7 +2213,7 @@ Prefab:
     - target: {fileID: 11462254, guid: 7a602376eb8f0eb49a6298feddd3fcf2, type: 2}
       propertyPath: food
       value: 
-      objectReference: {fileID: 163592, guid: 72a946962e2521e49907513eb6edd888, type: 2}
+      objectReference: {fileID: 132592, guid: 399dd3cfc2e09c74c8f3068a1ec3f232, type: 2}
     - target: {fileID: 11462254, guid: 7a602376eb8f0eb49a6298feddd3fcf2, type: 2}
       propertyPath: cutlery.Array.data[0]
       value: 
@@ -29188,7 +29188,7 @@ MonoBehaviour:
   FirstDigText: {fileID: 470049347}
   SecondDigText: {fileID: 397545734}
   CurCamText: {fileID: 2056673896}
-  food: {fileID: 163592, guid: 72a946962e2521e49907513eb6edd888, type: 2}
+  food: {fileID: 132592, guid: 399dd3cfc2e09c74c8f3068a1ec3f232, type: 2}
   cutlery:
   - {fileID: 141264, guid: d0133a97d5851614ab1ce8001737879f, type: 2}
   - {fileID: 158378, guid: 2766bc8a983a9b14ea8e198492906224, type: 2}

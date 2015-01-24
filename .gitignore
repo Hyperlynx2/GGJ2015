@@ -2,3 +2,5 @@
 /UtensilQuest/Temp
 *.csproj
 *.sln
+/UtensilQuest/Assembly-UnityScript-firstpass.unityproj
+/UtensilQuest/Assembly-UnityScript-firstpass-vs.unityproj

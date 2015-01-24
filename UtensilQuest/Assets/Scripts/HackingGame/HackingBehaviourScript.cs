@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 namespace HackingGame
 {
-
 	enum DIRECTION
 	{
 		UP,
@@ -95,6 +94,7 @@ namespace HackingGame
 
 		private void BuildMaze()
 		{
+			_allPieces = new List<PathPiece>();
 			_grid = new PathPiece[gridRows, gridColumns];
 			
 			System.Random random = new System.Random();
@@ -142,7 +142,6 @@ namespace HackingGame
 					break;
 				}
 
-				//TODO: do the allow<Dir> stuff when unwinding the stack, not now.
 
 				print("Next piece: (" + newPiece.row + "," + newPiece.col + ")?");
 
@@ -181,7 +180,51 @@ namespace HackingGame
 
 			//TODO: now add obstacles.
 
-			//TODO: now that the path is built, remove them from the board and put the pieces in a "pick bin" instead.
+			return; //TODO: remove after testing
+
+
+			//first piece in the chain always plugs in to the left wall.
+			path.Peek().allowLeft = true; 
+
+			while(path.Count > 1)
+			{
+				PathPiece current = path.Pop();
+				PathPiece next = path.Peek();
+
+				if(next.row < current.row)
+				{
+					current.allowDown = true;
+					next.allowUp = true;
+				}
+				else if(next.row > current.row)
+				{
+					current.allowUp = true;
+					next.allowDown = true;
+				}
+				else if(next.col < current.col)
+				{
+					current.allowLeft = true;
+					next.allowRight = true;
+				}
+				else if(next.col > current.col)
+				{
+					current.allowRight = true;
+					next.allowLeft = true;
+				}
+				else
+				{
+					throw new Exception("Sanity check failure: two hack nodes at the same position!");
+				}
+
+				_allPieces.Add(current);
+			}
+
+			//last piece in the chain always plugs in right, to the end wall
+			PathPiece last = path.Pop();
+			last.allowRight = true;
+			_allPieces.Add(last);
+
+			//TODO: shuffle the pieces?
 
 		}
 

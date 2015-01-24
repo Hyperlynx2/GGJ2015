@@ -1,20 +1,33 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HackingGame\HackingBehaviourScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HackingGame\PathPiece.cs">
     <Files>
-      <File FileName="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" Line="147" Column="1" />
-      <File FileName="Assets\Scripts\HackingGame\PathPiece.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" Line="10" Column="8" />
+      <File FileName="Assets\Scripts\HackingGame\PathPiece.cs" Line="43" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\IGDA\Desktop\GGJ2015\UtensilQuest\Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="147" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="171" offsetX="1091" offsetY="2824" expression="previousPiece.col" liveUpdate="False" />
-    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="173" offsetX="1071" offsetY="3002" expression="previousPiece.row" liveUpdate="False" />
-    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="172" offsetX="1307" offsetY="2908" expression="gridRows" liveUpdate="False" />
-    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="174" offsetX="1286" offsetY="2976" expression="gridColumns" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="150" offsetX="628" offsetY="2527" expression="newPiece.row" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="151" offsetX="630" offsetY="2556" expression="newPiece.col" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="152" offsetX="629" offsetY="2583" expression="_grid[newPiece.row, newPiece.col]" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="171" offsetX="1060" offsetY="2885" expression="previousPiece.row - 1" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="171" offsetX="1258" offsetY="2885" expression="_grid[previousPiece.row - 1, previousPiece.col]" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="172" offsetX="1058" offsetY="2911" expression="previousPiece.row + 1" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="172" offsetX="1259" offsetY="2911" expression="gridRows" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="172" offsetX="1394" offsetY="2911" expression=" _grid[previousPiece.row + 1, previousPiece.col]" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="173" offsetX="1062" offsetY="2938" expression="previousPiece.col - 1" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="173" offsetX="1255" offsetY="2935" expression="_grid[previousPiece.row, previousPiece.col - 1]" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="174" offsetX="1062" offsetY="2966" expression="previousPiece.col + 1 " liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="174" offsetX="1264" offsetY="2965" expression="_grid[previousPiece.row, previousPiece.col + 1]" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="150" offsetX="802" offsetY="2528" expression="gridRows" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="151" offsetX="799" offsetY="2556" expression="gridColumns" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="147" offsetX="232" offsetY="2477" expression="&quot;Next piece: (&quot; + newPiece.row + &quot;,&quot; + newPiece.col + &quot;)?&quot;" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="121" offsetX="463" offsetY="2039" expression="newPiece.row" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="122" offsetX="625" offsetY="2040" expression="newPiece.col" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="121" offsetX="445" offsetY="2013" expression="previousPiece.row" liveUpdate="False" />
+    <Watch file="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="122" offsetX="627" offsetY="2013" expression="previousPiece.col" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>

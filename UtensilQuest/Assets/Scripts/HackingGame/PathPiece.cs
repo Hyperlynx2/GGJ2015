@@ -5,7 +5,7 @@ namespace HackingGame
 
 	public class PathPiece : MonoBehaviour
 	{
-		public const float MULTIPLIER = 10.0f;
+		public const float MULTIPLIER = 100.0f;
 
 		/// <summary>
 		/// Does this piece form part of the "live current"	from the start point?
@@ -39,10 +39,7 @@ namespace HackingGame
 
 		void Update()
 		{
-			//ransform transform = gameObject.GetComponent<Transform>();
-
-			transform.position.Set(row * MULTIPLIER, col * MULTIPLIER, 0);
-
+			transform.position = new Vector3(row * MULTIPLIER, col * MULTIPLIER, 0);
 		}
 
 	}

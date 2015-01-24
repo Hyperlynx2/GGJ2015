@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\UI Scripts\GetPlayerIP.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\HandlerConnect.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\HandlerScrollViewController.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\MiniMapController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />

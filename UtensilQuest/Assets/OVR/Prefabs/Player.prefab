@@ -127,8 +127,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 258.255493, y: 2.65471101e-07, z: -198.597748}
-  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
+  m_LocalPosition: {x: 255.220001, y: 0, z: -124.279999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426708}
   - {fileID: 426714}
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: .200000003
+  Acceleration: .800000012
   Damping: .300000012
   BackAndSideDampen: .5
   JumpForce: .300000012
@@ -453,13 +453,13 @@ CharacterController:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   serializedVersion: 2
-  m_Height: 18
-  m_Radius: 3
+  m_Height: 16
+  m_Radius: 2.5
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .00999999978
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 9, z: 0}
+  m_Center: {x: 0, y: 8, z: 0}
 --- !u!148 &14826706
 NetworkView:
   m_ObjectHideFlags: 1

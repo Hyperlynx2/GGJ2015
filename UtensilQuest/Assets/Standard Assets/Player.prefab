@@ -78,8 +78,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 243.600006, y: 0, z: -206.300003}
-  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
+  m_LocalPosition: {x: 209.116302, y: 0, z: -106.535614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
   - {fileID: 486120}
@@ -253,9 +253,9 @@ MonoBehaviour:
   canControl: 1
   useFixedUpdate: 1
   movement:
-    maxForwardSpeed: 15
-    maxSidewaysSpeed: 6
-    maxBackwardsSpeed: 6
+    maxForwardSpeed: 18
+    maxSidewaysSpeed: 15
+    maxBackwardsSpeed: 12
     slopeSpeedMultiplier:
       serializedVersion: 2
       m_Curve:
@@ -276,7 +276,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    maxGroundAcceleration: 20
+    maxGroundAcceleration: 25
     maxAirAcceleration: 15
     gravity: 20
     maxFallSpeed: 20
@@ -377,13 +377,13 @@ CharacterController:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   serializedVersion: 2
-  m_Height: 18
-  m_Radius: 3
+  m_Height: 16
+  m_Radius: 2.5
   m_SlopeLimit: 45
   m_StepOffset: .400000006
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 9, z: 0}
+  m_Center: {x: 0, y: 8, z: 0}
 --- !u!1002 &14300001
 EditorExtensionImpl:
   serializedVersion: 6

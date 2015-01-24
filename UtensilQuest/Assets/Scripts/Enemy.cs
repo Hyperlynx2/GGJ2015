@@ -51,6 +51,10 @@ public class Enemy : MonoBehaviour
 			{
 				myState = states.chasing;
 			}
+			if(Vector3.Distance(this.transform.position, theSpy.transform.position) < 2)
+			{
+				myState = states.chasing;
+			}
 		}
 
 		//I'm currently on patrol
@@ -123,7 +127,7 @@ public class Enemy : MonoBehaviour
 			transform.LookAt(theSpy.transform.position);
 			transform.Translate(Vector3.forward * chaseSpeed * Time.smoothDeltaTime);
 			
-			theSpy.transform.LookAt(this.transform.position);
+			//theSpy.transform.LookAt(this.transform.position);
 			theSpy.GetComponent<AgentBehaviour>().messageText.text = "BUSTED!";
 			Time.timeScale = 0;
 			//condition to start patrolling again...

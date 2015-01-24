@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         spy, handler,
     }
     public role myRole;
-    public List<Camera> secCams = new List<Camera>();
+    public List<SecurityCamera> secCams = new List<SecurityCamera>();
     public GameObject theSpy;
     private int camIndex = 0;
     public GameObject OculusPlayer;
@@ -40,9 +40,9 @@ public class GameManager : MonoBehaviour
 			{
 				theSpy = Network.Instantiate (NonOcPlayer, spawnPoint.position, spawnPoint.rotation, 0) as GameObject;
 			}
-			foreach (Camera cam in secCams)
+			foreach (SecurityCamera cam in secCams)
 			{
-				cam.enabled = false;
+				cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
 				cam.GetComponent<AudioListener>().enabled = false;
 			}
 			Destroy (GameObject.Find("CameraGUI"));
@@ -51,14 +51,14 @@ public class GameManager : MonoBehaviour
         {
             myRole = role.handler;
 			//start with the cameras off.
-			foreach (Camera cam in secCams)
+			foreach (SecurityCamera cam in secCams)
 			{
-				cam.enabled = false;
+				cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
 				cam.GetComponent<AudioListener>().enabled = false;
                 //cam.GetComponent<SecurityCamera>().miniMapImage.enabled = false;
 			}
 			//turn the first one on.
-			secCams[0].enabled = true;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[0].GetComponent<AudioListener>().enabled = true;
             secCams[0].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         //press tab to cycle through the cameras
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            secCams[camIndex].enabled = false;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
             secCams[camIndex].GetComponent<AudioListener>().enabled = false;
             secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
             //cycle through as many cameras as we have.
@@ -116,13 +116,13 @@ public class GameManager : MonoBehaviour
             {
                 camIndex = 0;
             }
-            secCams[camIndex].enabled = true;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[camIndex].GetComponent<AudioListener>().enabled = true;
             secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
 		if(Input.GetKeyDown(KeyCode.LeftAlt))
 		{
-			secCams[camIndex].enabled = false;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
             secCams[camIndex].GetComponent<AudioListener>().enabled = false;
             secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
 			//cycle through as many cameras as we have.
@@ -134,7 +134,8 @@ public class GameManager : MonoBehaviour
 			{
 				camIndex = secCams.Count - 1;
 			}
-			secCams[camIndex].enabled = true;
+
+            secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[camIndex].GetComponent<AudioListener>().enabled = true;
             secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
 		}
@@ -308,11 +309,11 @@ public class GameManager : MonoBehaviour
     {
 		if(secCams.Count - 1 >= CamNumber && secCams[CamNumber] != null)
 		{
-	        secCams[camIndex].enabled = false;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
 	        secCams[camIndex].GetComponent<AudioListener>().enabled = false;
             secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
 	        camIndex = CamNumber;
-	        secCams[camIndex].enabled = true;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
 	        secCams[camIndex].GetComponent<AudioListener>().enabled = true;
             secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
 			if(camIndex < 10)
@@ -364,7 +365,7 @@ public class GameManager : MonoBehaviour
 			//turn off the player's cameras
 			foreach (Camera cam in theSpy.GetComponentsInChildren<Camera>())
 			{
-				cam.enabled = false;
+                cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
 			}
 		}
 	}

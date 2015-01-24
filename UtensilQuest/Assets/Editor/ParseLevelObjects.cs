@@ -19,6 +19,10 @@ public class ParseLevelObjects : MonoBehaviour
 
     static void DoLevelParsing(bool bKeepValues)
     {
+        GameManager manager = GameManager.FindObjectOfType<GameManager>();
+        manager.secCams.Clear();
+
+
         GameObject[] goList = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject obj in goList)
         {
@@ -31,7 +35,20 @@ public class ParseLevelObjects : MonoBehaviour
             {
                 AttachCollidableObject(obj, bKeepValues);
             }
+
+            if(obj.name.Contains("PLAYER-START"))
+            {
+                HandlePlayerSpawnPoint(obj);
+            }
         }
+    }
+
+    private static void HandlePlayerSpawnPoint(GameObject obj)
+    {
+        GameManager manager = GameManager.FindObjectOfType<GameManager>();
+        manager.spawnPoint = obj.transform;
+
+        EditorUtility.SetDirty(manager);
     }
 
     private static void AttachSecurityCamera(GameObject obj, bool bKeepValues)
@@ -58,7 +75,22 @@ public class ParseLevelObjects : MonoBehaviour
             net = obj.AddComponent<NetworkView>();
         }
 
+        Camera cam = obj.GetComponent<Camera>();
+        if (cam == null)
+        {
+            cam = obj.AddComponent<Camera>();
+        }
 
+        AudioListener listener = obj.GetComponent<AudioListener>();
+        if (listener == null)
+        {
+            listener = obj.AddComponent<AudioListener>();
+        }
+
+        GameManager manager = GameManager.FindObjectOfType<GameManager>();
+        manager.secCams.Add(cam);
+
+        EditorUtility.SetDirty(obj);
         Debug.Log("Added a camera!");
     }
 
@@ -71,6 +103,7 @@ public class ParseLevelObjects : MonoBehaviour
             col = obj.AddComponent<BoxCollider>();
         }
 
+        EditorUtility.SetDirty(obj);
         Debug.Log("Added a collidable");
     }
 

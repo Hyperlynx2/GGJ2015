@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; 
 
 //this script determines what role you are and then sets up your mechanics accordingly
 public class GameManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
         spy, handler,
     }
     public role myRole;
-    public Camera[] secCams;
+    public List<Camera> secCams = new List<Camera>();
     public GameObject theSpy;
     private int camIndex = 0;
     public GameObject OculusPlayer;
@@ -116,7 +117,7 @@ public class GameManager : MonoBehaviour
             secCams[camIndex].enabled = false;
             secCams[camIndex].GetComponent<AudioListener>().enabled = false;
             //cycle through as many cameras as we have.
-            if (camIndex < secCams.Length - 1)
+            if (camIndex < secCams.Count - 1)
             {
                 camIndex++;
             }
@@ -127,43 +128,43 @@ public class GameManager : MonoBehaviour
             secCams[camIndex].enabled = true;
             secCams[camIndex].GetComponent<AudioListener>().enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1) && secCams.Length - 1 >= 0 && secCams[0] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && secCams.Count - 1 >= 0 && secCams[0] != null)
         {
             SetCam(0);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && secCams.Length - 1 >= 1 && secCams[1] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && secCams.Count - 1 >= 1 && secCams[1] != null)
         {
             SetCam(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && secCams.Length - 1 >= 2 && secCams[2] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && secCams.Count - 1 >= 2 && secCams[2] != null)
         {
             SetCam(2);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && secCams.Length - 1 >= 3 && secCams[3] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha4) && secCams.Count - 1 >= 3 && secCams[3] != null)
         {
             SetCam(3);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && secCams.Length - 1 >= 4 && secCams[4] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha5) && secCams.Count - 1 >= 4 && secCams[4] != null)
         {
             SetCam(4);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6) && secCams.Length - 1 >= 5 && secCams[5] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha6) && secCams.Count - 1 >= 5 && secCams[5] != null)
         {
             SetCam(5);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha7) && secCams.Length - 1 >= 6 && secCams[6] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha7) && secCams.Count - 1 >= 6 && secCams[6] != null)
         {
             SetCam(6);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha8) && secCams.Length - 1 >= 7 && secCams[7] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha8) && secCams.Count - 1 >= 7 && secCams[7] != null)
         {
             SetCam(7);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha9) && secCams.Length - 1 >= 8 && secCams[8] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha9) && secCams.Count - 1 >= 8 && secCams[8] != null)
         {
             SetCam(8);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha0) && secCams.Length - 1 >= 9 && secCams[9] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha0) && secCams.Count - 1 >= 9 && secCams[9] != null)
         {
             SetCam(9);
         }

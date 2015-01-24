@@ -8,15 +8,25 @@ public class AgentBehaviour : MonoBehaviour
 	public Sprite[] invIcons;
 	public Image[] invGUI;
 	public Text messageText;
+	public Text timerText;
 	public int currentSlot = 0;
+	private float levelTimer;
+	public int levelLength;
+	private int timerDis;
 	// Use this for initialization
 	void Start () 
 	{
-		for(int i = 1; i<=invGUI.Length; i++)
+		if(Network.isServer)
 		{
-			invGUI[i-1] = GameObject.Find("PGUI"+i.ToString()).GetComponent<Image>();
+			//get the amount of items in the 
+			for(int i = 1; i<=invGUI.Length; i++)
+			{
+				invGUI[i-1] = GameObject.Find("PGUI"+i.ToString()).GetComponent<Image>();
+			}
+			messageText = GameObject.Find ("MessageText").GetComponent<Text>();
+			timerText = GameObject.Find ("timer").GetComponent<Text>();
+			levelTimer = levelLength;
 		}
-		messageText = GameObject.Find ("MessageText").GetComponent<Text>();
 	}
 
 	void UpdateImages()
@@ -29,6 +39,36 @@ public class AgentBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if(Network.isServer)
+		{
+			if(levelTimer <= 0)
+			{
+				messageText.text = "My food will be cold by now!";
+				GetComponent<CharacterController>().enabled = false;
+				Invoke("GameLose", 3.0f);
+			}
+			else
+			{
+				levelTimer -= Time.smoothDeltaTime;
+				timerDis = Mathf.RoundToInt(levelTimer);
+				string mins = (timerDis/60).ToString();
+				string secs = (timerDis%60).ToString();
+				if((timerDis%60) < 10)
+				{
+					secs = "0"+secs;
+				}
+				timerText.text = mins + ":" + secs;
+			}
+		}
+	}
 
+	void GameWin()
+	{
+		Application.LoadLevel ("5 - EndGame");
+	}
+
+	void GameLose()
+	{
+		Application.LoadLevel ("5 - EndGame");
 	}
 }

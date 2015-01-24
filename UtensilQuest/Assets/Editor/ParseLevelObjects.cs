@@ -142,14 +142,10 @@ public class ParseLevelObjects : MonoBehaviour
             //scr.waitFor = 1;
         }
 
-        string cameraID = obj.name.Substring("SecurityCam-Top-".Length, 3);
-       // Debug.Log(cameraID);
-        Debug.Log("SecurityCamera-MiniMap-" + cameraID.ToString());
-        GameObject miniMapIcon = GameObject.Find("SecurityCamera-MinMap-" + cameraID.ToString());
-        //Debug.Log(miniMapIcon);
-        if(miniMapIcon)
+        SecurityCameraMinimapDisplay miniMap = obj.GetComponent<SecurityCameraMinimapDisplay>();
+        if (miniMap == null)
         {
-            scr.miniMapImage = miniMapIcon.GetComponent<Image>();
+            miniMap = obj.AddComponent<SecurityCameraMinimapDisplay>();
         }
 
         NetworkView net = obj.GetComponent<NetworkView>();

@@ -11,7 +11,6 @@ public class SecurityCamera : MonoBehaviour
 	private float waitTimer = 0.0f;
 	public int waitFor = 1;
 
-    public Image miniMapImage;
     private Camera _camera;
 
     private Quaternion _leftRotDir = Quaternion.identity;

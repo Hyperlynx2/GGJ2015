@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/Scenes/4 - MainGame.unity
   - enabled: 1
     path: Assets/Scenes/4 - Test Level.unity
+  - enabled: 1
+    path: Assets/Scenes/5 - EndGame.unity

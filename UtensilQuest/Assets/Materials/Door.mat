@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Door
-  m_Shader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -47,11 +47,11 @@ Material:
         second: {r: .272058845, g: .192869306, b: .13202855, a: 1}
       data:
         first:
-          name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 0}
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
-          name: _Emission
+          name: _SpecColor
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
@@ -60,4 +60,4 @@ Material:
       data:
         first:
           name: _TintColor
-        second: {r: .117647052, g: .0866722316, b: .0666089952, a: .501960814}
+        second: {r: .117647052, g: .0866722316, b: .0666089952, a: 1}

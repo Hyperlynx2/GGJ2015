@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9558378}
   - 114: {fileID: 11458378}
   - 135: {fileID: 13558378}
+  - 148: {fileID: 14818812}
   m_Layer: 0
   m_Name: Pickup-003-Fork
   m_TagString: Untagged
@@ -98,6 +99,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: -.051123023, y: 7.91901016, z: -.134063721}
+--- !u!148 &14818812
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158378}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 458378}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

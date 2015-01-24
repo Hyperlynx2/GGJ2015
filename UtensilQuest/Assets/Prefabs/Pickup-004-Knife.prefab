@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9540436}
   - 114: {fileID: 11440436}
   - 135: {fileID: 13540436}
+  - 148: {fileID: 14893038}
   m_Layer: 0
   m_Name: Pickup-004-Knife
   m_TagString: Untagged
@@ -98,6 +99,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: -.051123023, y: 7.91901016, z: -.134063721}
+--- !u!148 &14893038
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140436}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 440436}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

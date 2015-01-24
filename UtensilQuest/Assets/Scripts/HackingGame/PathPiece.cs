@@ -5,6 +5,11 @@ namespace HackingGame
 
 	public class PathPiece : MonoBehaviour
 	{
+		public const float MULTIPLIER = 10.0f;
+
+		/// <summary>
+		/// Does this piece form part of the "live current"	from the start point?
+		/// </summary>
 		public bool live;
 
 		public bool allowUp;
@@ -22,6 +27,8 @@ namespace HackingGame
 		/// </summary>
 		public int col;
 
+		public HackingBehaviourScript _board;
+
 		public PathPiece()
 		{
 			allowUp = false;
@@ -30,15 +37,14 @@ namespace HackingGame
 			allowLeft = false;
 		}
 
-		public PathPiece(PathPiece other)
+		void Update()
 		{
-			this.allowUp = false;
-			this.allowDown = false;
-			this.allowRight = false;
-			this.allowLeft = false;
-			this.row = other.row;
-			this.col = other.col;
+			//ransform transform = gameObject.GetComponent<Transform>();
+
+			transform.position.Set(row * MULTIPLIER, col * MULTIPLIER, 0);
+
 		}
+
 	}
 }
 

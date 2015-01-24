@@ -2,11 +2,17 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HackingGame\HackingBehaviourScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HackingGame\HackingBehaviourScript.cs" Line="196" Column="1" />
+      <File FileName="Assets\Scripts\HackingGame\PathPiece.cs" Line="34" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\IGDA\Desktop\GGJ2015\UtensilQuest\Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="88" />
+      <Breakpoint file="C:\Users\IGDA\Desktop\GGJ2015\UtensilQuest\Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="108" />
+      <Breakpoint file="C:\Users\IGDA\Desktop\GGJ2015\UtensilQuest\Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="145" />
+      <Breakpoint file="C:\Users\IGDA\Desktop\GGJ2015\UtensilQuest\Assets\Scripts\HackingGame\HackingBehaviourScript.cs" line="146" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

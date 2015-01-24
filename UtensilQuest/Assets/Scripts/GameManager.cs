@@ -1,92 +1,66 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 //this script determines what role you are and then sets up your mechanics accordingly
 public class GameManager : MonoBehaviour
 {
+	public bool OculusGame = false;
     public enum role
     {
         spy, handler,
     }
     public role myRole;
-    public Camera[] secCams;
+    public List<SecurityCamera> secCams = new List<SecurityCamera>();
     public GameObject theSpy;
     private int camIndex = 0;
     public GameObject OculusPlayer;
     public GameObject NonOcPlayer;
     public Transform spawnPoint;
+	private bool Typing;
+	private int firstDigit;
+	private int secondDigit;
+	private float typingTimer;
+	public int typingWindow;
+	public Text FirstDigText;
+	public Text SecondDigText;
+	public Text CurCamText;
     // Use this for initialization
     void Start()
     {
-        /*if (Network.isServer)
+        if (Network.isServer) //I'm the spy, spawn me.
         {
             myRole = role.spy;
-        }
-        else
+			if(OculusGame)
+			{
+				theSpy = Network.Instantiate (OculusPlayer, spawnPoint.position, spawnPoint.rotation, 0) as GameObject;
+			}
+			else
+			{
+				theSpy = Network.Instantiate (NonOcPlayer, spawnPoint.position, spawnPoint.rotation, 0) as GameObject;
+			}
+			foreach (SecurityCamera cam in secCams)
+			{
+				cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
+				cam.GetComponent<AudioListener>().enabled = false;
+			}
+			Destroy (GameObject.Find("CameraGUI"));
+		}
+        else  //I'm the handler, set up the cameras
         {
             myRole = role.handler;
-        }*/
-        //if I'm not the spy, disable the spy.
-        //if (myRole == role.handler)
-            //our server spawns in the player
-            //if(Network.isServer)
-            //{
-            //spawn in our player
-            //if oculus
-            //{
-            //theSpy = Network.Instantiate (OculusPlayer, spawnPoint.position, spawnPoint.rotation, 0) as GameObject;
-            //}
-            //else
-            //{
-            //theSpy = Network.Instantiate (NonOcPlayer, spawnPoint.position, spawnPoint.rotation, 0) as GameObject;
-            theSpy = Instantiate(NonOcPlayer, spawnPoint.position, spawnPoint.rotation) as GameObject; //TEMP!!
-        //}
-        //}
-        if (theSpy == null)
-        {
-            theSpy = GameObject.Find("Player(Clone)");
-        }
-        else
-        {
-            if (myRole == role.handler) //if I'm not the spy, disable the spy. Then set up the security cams.
-            {
-                //if oculus
-                //theSpy.SetActive(false);
-                /*theSpy.GetComponent<OVRGamepadController>().enabled = false;
-                theSpy.GetComponent<OVRPlayerController>().enabled = false;
-                theSpy.GetComponent<OVRMainMenu>().enabled = false;
-                theSpy.GetComponentInChildren<OVRCameraRig>().enabled = false;
-                theSpy.GetComponentInChildren<OVRManager>().enabled = false;
-                theSpy.GetComponentInChildren<OVRScreenFade>().enabled = false;*/
-                //else
-                //{
-                theSpy.GetComponent<MouseLook>().enabled = false;
-                theSpy.GetComponent<CharacterMotor>().enabled = false;
-                theSpy.GetComponent<FPSInputController>().enabled = false;
-                //}
-                //turn off the player's cameras
-                foreach (Camera cam in theSpy.GetComponentsInChildren<Camera>())
-                {
-                    cam.enabled = false;
-                }
-                //start with the cameras off.
-                foreach (Camera cam in secCams)
-                {
-                    cam.enabled = false;
-                    cam.GetComponent<AudioListener>().enabled = false;
-                }
-                //turn the first one on.
-                secCams[0].enabled = true;
-                secCams[0].GetComponent<AudioListener>().enabled = true;
-            }
-            else //I'm the spy, so turn off the security cameras for me.
-            {
-                foreach (Camera cam in secCams)
-                {
-                    cam.enabled = false;
-                    cam.GetComponent<AudioListener>().enabled = false;
-                }
-            }
+			//start with the cameras off.
+			foreach (SecurityCamera cam in secCams)
+			{
+				cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
+				cam.GetComponent<AudioListener>().enabled = false;
+                //cam.GetComponent<SecurityCamera>().miniMapImage.enabled = false;
+			}
+			//turn the first one on.
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
+            secCams[0].GetComponent<AudioListener>().enabled = true;
+            secCams[0].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
     }
 
@@ -110,13 +84,31 @@ public class GameManager : MonoBehaviour
     //HACKER SECTION
     void HandlerMechanics()
     {
+		//double check the player is turned off.
+		TurnOffPlayer ();
+
+		//handle the timer for typing your chosen camera
+		if(Typing)
+		{
+			FirstDigText.text = firstDigit.ToString();
+			SecondDigText.text = secondDigit.ToString();
+			typingTimer += Time.smoothDeltaTime;
+			if(typingTimer >= typingWindow || Input.GetKeyDown(KeyCode.Return))
+			{
+				//determine the number chosen and select that camera
+				typingTimer = 0;
+				SetCam(ProcessNumber(firstDigit,secondDigit));
+			}
+		}
+
         //press tab to cycle through the cameras
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            secCams[camIndex].enabled = false;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
             secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
             //cycle through as many cameras as we have.
-            if (camIndex < secCams.Length - 1)
+            if (camIndex < secCams.Count - 1)
             {
                 camIndex++;
             }
@@ -124,60 +116,259 @@ public class GameManager : MonoBehaviour
             {
                 camIndex = 0;
             }
-            secCams[camIndex].enabled = true;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
             secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1) && secCams.Length - 1 >= 0 && secCams[0] != null)
+		if(Input.GetKeyDown(KeyCode.LeftAlt))
+		{
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
+            secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
+			//cycle through as many cameras as we have.
+			if (camIndex > 0)
+			{
+				camIndex --;
+			}
+			else
+			{
+				camIndex = secCams.Count - 1;
+			}
+
+            secCams[camIndex].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
+            secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
+		}
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))	//I pressed 1
         {
-            SetCam(0);
+			//if I haven't started typing, now I am so it's the first digit.
+            if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 1;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 1;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && secCams.Length - 1 >= 1 && secCams[1] != null)
-        {
-            SetCam(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && secCams.Length - 1 >= 2 && secCams[2] != null)
-        {
-            SetCam(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && secCams.Length - 1 >= 3 && secCams[3] != null)
-        {
-            SetCam(3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && secCams.Length - 1 >= 4 && secCams[4] != null)
-        {
-            SetCam(4);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6) && secCams.Length - 1 >= 5 && secCams[5] != null)
-        {
-            SetCam(5);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7) && secCams.Length - 1 >= 6 && secCams[6] != null)
-        {
-            SetCam(6);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8) && secCams.Length - 1 >= 7 && secCams[7] != null)
-        {
-            SetCam(7);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha9) && secCams.Length - 1 >= 8 && secCams[8] != null)
-        {
-            SetCam(8);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha0) && secCams.Length - 1 >= 9 && secCams[9] != null)
-        {
-            SetCam(9);
-        }
+		if (Input.GetKeyDown(KeyCode.Alpha2))	//I pressed 2
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 2;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 2;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha3))	//I pressed 3
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				firstDigit = 3;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 3;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha4))	//I pressed 4
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 4;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 4;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha5))	//I pressed 5
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 5;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 5;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha6))	//I pressed 6
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 6;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 6;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha7))	//I pressed 7
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 7;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 7;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha8))	//I pressed 8
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 8;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 8;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha9))	//I pressed 9
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 9;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 9;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha0))	//I pressed 0
+		{
+			//if I haven't started typing, now I am so it's the first digit.
+			if(!Typing)
+			{
+				Typing = true;
+				firstDigit = 0;
+			}
+			else //obviously I want the second digit
+			{
+				secondDigit = 0;
+				//pass the digits to the function and then set the camera
+				typingTimer = 0;
+			}
+		}
     }
+
+	//this turns the two numbers we typed into a double digit number
+	int ProcessNumber(int a, int b)
+	{
+		int camNum = (a * 10) + b;
+		//Debug.Log (camNum);
+		firstDigit = 0;
+		secondDigit = 0;
+		FirstDigText.text = "_";
+		SecondDigText.text = "_";
+		Typing = false;
+		return camNum;
+	}
 
     //sets the camera to the one we want.
     void SetCam(int CamNumber)
     {
-        secCams[camIndex].enabled = false;
-        secCams[camIndex].GetComponent<AudioListener>().enabled = false;
-        camIndex = CamNumber;
-        secCams[camIndex].enabled = true;
-        secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+		if(secCams.Count - 1 >= CamNumber && secCams[CamNumber] != null)
+		{
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
+	        secCams[camIndex].GetComponent<AudioListener>().enabled = false;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = false;
+	        camIndex = CamNumber;
+            secCams[0].transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = true;
+	        secCams[camIndex].GetComponent<AudioListener>().enabled = true;
+            secCams[camIndex].GetComponent<SecurityCamera>().miniMapImage.enabled = true;
+			if(camIndex < 10)
+			{
+				CurCamText.text = "0"+camIndex.ToString();
+			}
+			else
+			{
+				CurCamText.text = camIndex.ToString();
+			}
+		}
+		else
+		{
+			return;
+		}
     }
+
+	//fallback function
+	void TurnOffPlayer()
+	{
+		if (theSpy == null) //set theSpy if it's null, just to avoid errors, especially with the next part.
+		{
+			if(GameObject.Find("Player(Clone)"))
+			{
+				theSpy = GameObject.Find("Player(Clone)");
+			}
+			else
+			{
+				return;
+			}
+
+			//turn off the Oculus prefab components if we're playing an oculus game
+			if(OculusGame)
+			{
+				theSpy.SetActive(false);
+				theSpy.GetComponent<OVRGamepadController>().enabled = false;
+				theSpy.GetComponent<OVRPlayerController>().enabled = false;
+				theSpy.GetComponent<OVRMainMenu>().enabled = false;
+				theSpy.GetComponentInChildren<OVRCameraRig>().enabled = false;
+				theSpy.GetComponentInChildren<OVRManager>().enabled = false;
+				theSpy.GetComponentInChildren<OVRScreenFade>().enabled = false;
+			}
+			else //or the fps controller components if we're not
+			{
+				theSpy.GetComponent<MouseLook>().enabled = false;
+				theSpy.GetComponent<CharacterMotor>().enabled = false;
+				theSpy.GetComponent<FPSInputController>().enabled = false;
+			}
+			//turn off the player's cameras
+			foreach (Camera cam in theSpy.GetComponentsInChildren<Camera>())
+			{
+                cam.transform.GetChild(0).gameObject.GetComponent<Camera>().enabled = false;
+			}
+		}
+	}
 
     //SPY SECTION
     void SpyMechanics()

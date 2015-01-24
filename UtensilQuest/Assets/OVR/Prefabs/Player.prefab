@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11426708}
   - 114: {fileID: 11426706}
   - 148: {fileID: 14826706}
+  - 114: {fileID: 11456844}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -111,9 +112,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 426718}
   - 33: {fileID: 3326706}
-  - 136: {fileID: 13626706}
   - 23: {fileID: 2326706}
-  - 114: {fileID: 11420450}
   m_Layer: 2
   m_Name: Display
   m_TagString: Untagged
@@ -128,8 +127,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.5100002, y: 1.53999996, z: -23.3999996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 254.25, y: .0199999996, z: -173.059998}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 426708}
   - {fileID: 426714}
@@ -179,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .546000004, z: .108000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426716}
@@ -301,7 +300,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126718}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 4801c2541095dee4887cbdcb183c5bff, type: 3}
 --- !u!81 &8126706
 AudioListener:
   m_ObjectHideFlags: 1
@@ -309,28 +308,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126710}
   m_Enabled: 1
---- !u!114 &11420450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 181c9088628eb7348b58399d7f1af54a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  invIcons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currentSlot: 0
 --- !u!114 &11426706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -366,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0950df82e7936c84983497630bde5b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: .100000001
+  Acceleration: .200000003
   Damping: .300000012
   BackAndSideDampen: .5
   JumpForce: .300000012
@@ -445,19 +422,29 @@ MonoBehaviour:
   fadeTime: 2
   fadeColor: {r: .00999999978, g: .00999999978, b: .00999999978, a: 1}
   fadeShader: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
---- !u!136 &13626706
-CapsuleCollider:
+--- !u!114 &11456844
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126718}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_GameObject: {fileID: 126706}
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181c9088628eb7348b58399d7f1af54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  invIcons:
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  invGUI: []
+  currentSlot: 0
 --- !u!143 &14326706
 CharacterController:
   m_ObjectHideFlags: 1
@@ -465,13 +452,13 @@ CharacterController:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: .5
+  m_Height: 1.5
+  m_Radius: .300000012
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .00999999978
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: .800000012, z: 0}
 --- !u!148 &14826706
 NetworkView:
   m_ObjectHideFlags: 1

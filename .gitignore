@@ -1,3 +1,4 @@
 /UtensilQuest/Library
 /UtensilQuest/Temp
-/UtensilQuest/*.csproj
+*.sln
+*.csproj

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 //Controls the security camera, pans left and right with a delay and the ends.
 public class SecurityCamera : MonoBehaviour 
@@ -10,6 +11,9 @@ public class SecurityCamera : MonoBehaviour
 	private float waitTimer;
 	public int waitFor;
 
+    public Image miniMapImage;
+    private Camera _camera;
+
 	public enum rotDirection
 	{
 		left, right,
@@ -19,12 +23,27 @@ public class SecurityCamera : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-	
+        _camera = transform.GetChild(0).gameObject.GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if(_camera.enabled)
+		{
+			if(Input.GetMouseButtonDown(0))
+			{
+                Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+				RaycastHit hit;
+				if(Physics.Raycast(ray, out hit))
+				{
+					if(hit.collider.GetComponent<Door>())
+					{
+						hit.collider.GetComponent<Door>().SendMessage("Locking", !hit.collider.GetComponent<Door>().isLocked);
+					}
+				}
+			}
+		}
 		//I'm panning left
 		if(currentDirection == rotDirection.left)
 		{

@@ -1,9 +1,15 @@
 ﻿using UnityEditor;
 using UnityEngine;
+
+using UnityEngine.UI;
+
 using System.Collections;
+using System.Collections.Generic;
 
 public class ParseLevelObjects : MonoBehaviour
 {
+    static List<List<Transform>> enemyPathList = null;
+
 
     [MenuItem("Game/Parse Level Objects (Reset all values)")]
     static void DoFullLevelParse()
@@ -19,19 +25,104 @@ public class ParseLevelObjects : MonoBehaviour
 
     static void DoLevelParsing(bool bKeepValues)
     {
+        //Reset the state of the world for things that we will be regenerating
+        GameManager manager = GameManager.FindObjectOfType<GameManager>();
+        manager.secCams.Clear();
+
+        //Destroy all enemies in the level
+        Enemy[] enemyList = GameObject.FindObjectsOfType<Enemy>();
+        foreach (Enemy obj in enemyList)
+        {
+            GameObject.DestroyImmediate(obj.gameObject);
+        }
+
+        //Empty the old path list
+        enemyPathList = new List<List<Transform>>();
+
         GameObject[] goList = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject obj in goList)
         {
-            if (obj.name.Contains("SecurityCam"))
+            if (obj.name.Contains("SecurityCam-Top"))
             {
                 AttachSecurityCamera(obj, bKeepValues);
             }
 
-            if (obj.name.Contains("COLLIDE"))
+            if (obj.name.Contains("COLLIDE") || obj.name.Contains("COLLISION"))
             {
                 AttachCollidableObject(obj, bKeepValues);
             }
+
+            if(obj.name.Contains("PLAYER-START"))
+            {
+                HandlePlayerSpawnPoint(obj);
+            }
+            if(obj.name.Contains("PATHNODE"))
+            {
+                HandlePathNode(obj);
+            }
         }
+
+        CreateEnemiesForPaths();
+    }
+
+    private static void CreateEnemiesForPaths()
+    {
+        foreach(List<Transform> enemyPath in enemyPathList)
+        {
+
+            Object enemyPrefab = Resources.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemy.prefab");
+            GameObject enemyObj = PrefabUtility.InstantiatePrefab(enemyPrefab) as GameObject;
+
+            Enemy scr = enemyObj.GetComponent<Enemy>();
+
+            //Remove any null transforms in the area
+            enemyPath.RemoveAll(item => item == null);
+
+
+            scr.waypoints = enemyPath.ToArray();
+
+
+            enemyObj.transform.position = enemyPath[0].position;
+        }
+    }
+
+    private static void HandlePathNode(GameObject obj)
+    {
+        obj.renderer.enabled = false;
+
+        //Parse the path node for information
+        string pathID = obj.name.Substring("PATHNODE-".Length, 3);
+        string nodeValue = obj.name.Substring("PATHNODE-xxx-".Length, 3);
+
+        int iPathID = int.Parse(pathID);
+        int iNodeValue = int.Parse(nodeValue);
+
+
+        while(iPathID > enemyPathList.Count)
+        {
+            enemyPathList.Add(null);
+        }
+
+        if(enemyPathList[iPathID - 1] == null)
+        {
+            enemyPathList[iPathID - 1] = new List<Transform>();
+        }
+
+        
+        while(iNodeValue > enemyPathList[iPathID - 1].Count)
+        {
+            enemyPathList[iPathID - 1].Add(null);
+        }
+
+        enemyPathList[iPathID - 1][iNodeValue - 1] = obj.transform;
+    }
+
+    private static void HandlePlayerSpawnPoint(GameObject obj)
+    {
+        GameManager manager = GameManager.FindObjectOfType<GameManager>();
+        manager.spawnPoint = obj.transform;
+
+        EditorUtility.SetDirty(manager);
     }
 
     private static void AttachSecurityCamera(GameObject obj, bool bKeepValues)
@@ -51,6 +142,16 @@ public class ParseLevelObjects : MonoBehaviour
             scr.waitFor = 1;
         }
 
+        string cameraID = obj.name.Substring("SecurityCam-Top-".Length, 3);
+       // Debug.Log(cameraID);
+        Debug.Log("SecurityCamera-MiniMap-" + cameraID.ToString());
+        GameObject miniMapIcon = GameObject.Find("SecurityCamera-MinMap-" + cameraID.ToString());
+        //Debug.Log(miniMapIcon);
+        if(miniMapIcon)
+        {
+            scr.miniMapImage = miniMapIcon.GetComponent<Image>();
+        }
+
         NetworkView net = obj.GetComponent<NetworkView>();
 
         if (net == null)
@@ -59,7 +160,26 @@ public class ParseLevelObjects : MonoBehaviour
         }
 
 
-        Debug.Log("Added a camera!");
+        GameObject cameraMount = obj.transform.GetChild(0).gameObject;
+        cameraMount.transform.localRotation = Quaternion.identity;
+        Camera cam = cameraMount.GetComponent<Camera>();
+        if (cam == null)
+        {   
+            cam = cameraMount.AddComponent<Camera>();
+        }
+
+        AudioListener listener = obj.GetComponent<AudioListener>();
+        if (listener == null)
+        {
+            listener = obj.AddComponent<AudioListener>();
+        }
+
+        GameManager manager = GameManager.FindObjectOfType<GameManager>();
+        manager.secCams.Add(obj.GetComponent<SecurityCamera>());
+        manager.secCams.Sort((emp1, emp2) => emp1.gameObject.name.CompareTo(emp2.gameObject.name));
+
+        EditorUtility.SetDirty(obj);
+        //Debug.Log("Added a camera!");
     }
 
     private static void AttachCollidableObject(GameObject obj, bool bKeepValues)
@@ -71,7 +191,8 @@ public class ParseLevelObjects : MonoBehaviour
             col = obj.AddComponent<BoxCollider>();
         }
 
-        Debug.Log("Added a collidable");
+        EditorUtility.SetDirty(obj);
+        //Debug.Log("Added a collidable");
     }
 
 }

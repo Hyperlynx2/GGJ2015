@@ -128,7 +128,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 255.220001, y: 0, z: -124.279999}
+  m_LocalPosition: {x: 215.800003, y: 1.26999998, z: -106.629997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426708}
@@ -179,7 +179,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.2399998, z: .970000029}
+  m_LocalPosition: {x: 0, y: 15.2399998, z: 1.35000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 426716}
@@ -352,7 +352,7 @@ MonoBehaviour:
   RotationRatchet: 45
   HmdRotatesY: 1
   GravityModifier: 1
-  useProfileHeight: 1
+  useProfileHeight: 0
 --- !u!114 &11426710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -391,12 +391,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nativeTextureScale: 1
   virtualTextureScale: 1
-  usePositionTracking: 1
+  usePositionTracking: 0
   eyeTextureFormat: 7
   eyeTextureDepth: 24
   timeWarp: 1
   freezeTimeWarp: 0
-  resetTrackerOnLoad: 1
+  resetTrackerOnLoad: 0
   monoscopic: 0
 --- !u!114 &11426716
 MonoBehaviour:
@@ -438,15 +438,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   invIcons:
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  invGUI: []
+  invGUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   messageText: {fileID: 0}
+  timerText: {fileID: 0}
   currentSlot: 0
+  levelLength: 150
 --- !u!114 &11458924
 MonoBehaviour:
   m_ObjectHideFlags: 1

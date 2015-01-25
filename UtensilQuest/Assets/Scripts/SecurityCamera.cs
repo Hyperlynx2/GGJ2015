@@ -50,7 +50,7 @@ public class SecurityCamera : MonoBehaviour
 	{
 		if(_camera.enabled)
 		{
-			if(Input.GetMouseButtonDown(0))
+			if(Input.GetMouseButtonDown(0) && GameManager.GetInstance().InputIsActive())
 			{
                 Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 				RaycastHit hit;
@@ -61,7 +61,6 @@ public class SecurityCamera : MonoBehaviour
 					{
 						_hackGame = (GameObject)Instantiate(hackGamePrefab);
 						_hackGame.GetComponent<HackGameController>().door = door;
-						//TODO: make sure that the hack game appropriately takes input focus
 					}
 				}     
 			}

@@ -5221,9 +5221,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!81 &162449319
 AudioListener:
@@ -5636,9 +5636,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &170699409
 Renderer:
@@ -6955,9 +6955,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &207209718
 Renderer:
@@ -11199,9 +11199,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &356291646
 Renderer:
@@ -19521,9 +19521,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &609223537
 Renderer:
@@ -20758,9 +20758,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &644060426
 Renderer:
@@ -27817,9 +27817,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &818744791
 Renderer:
@@ -29491,9 +29491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &872997747
 Renderer:
@@ -31535,9 +31535,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &938690182
 Renderer:
@@ -32760,9 +32760,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &976528752
 Renderer:
@@ -45059,9 +45059,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &1316598454
 Renderer:
@@ -46520,10 +46520,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DownRotAngle: 25
-  RotAngle: 0
-  rotSpeed: .200000003
+  RotAngle: 90
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &1358185061
 Renderer:
@@ -59292,9 +59292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &1698069949
 Renderer:
@@ -61583,9 +61583,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &1763581431
 Renderer:
@@ -74235,9 +74235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownRotAngle: 25
   RotAngle: 90
-  rotSpeed: .200000003
+  rotSpeed: 2
   waitFor: 1
-  hackGamePrefab: {fileID: 0}
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!23 &2094959000
 Renderer:

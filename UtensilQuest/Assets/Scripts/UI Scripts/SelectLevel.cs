@@ -6,7 +6,7 @@ public class SelectLevel : MonoBehaviour {
 	// Use this for initialization
 	public void OnTestLevelButtonClicked()
     {
-        PlayerPrefs.SetString("LEVEL_TO_LOAD", "4 - Test Level");
+        PlayerPrefs.SetString("LEVEL_TO_LOAD", "4 - UQ-LEVEL-001");
         Application.LoadLevel("3 - AgentLobby");
     }
 

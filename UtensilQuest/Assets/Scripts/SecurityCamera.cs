@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-//Controls the security camera, pans left and right with a delay and the ends.
+//Controls the security camera, pans left and right with a delay and then ends.
 public class SecurityCamera : MonoBehaviour 
 {
     public float DownRotAngle = 25.0f;
@@ -19,6 +19,10 @@ public class SecurityCamera : MonoBehaviour
 
     private float rotTime = 0.0f;
     private float rotRate = 0.0f;
+	public GameObject hackGamePrefab = null;
+
+	private GameObject _hackGame = null;
+
 	public enum rotDirection
 	{
 		left, right,
@@ -49,17 +53,19 @@ public class SecurityCamera : MonoBehaviour
 	{
 		if(_camera.enabled)
 		{
-			if(Input.GetMouseButtonDown(0))
+			if(Input.GetMouseButtonDown(0) && GameManager.GetInstance().InputIsActive())
 			{
                 Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 				RaycastHit hit;
 				if(Physics.Raycast(ray, out hit))
 				{
-					if(hit.collider.GetComponent<Door>())
+					Door door = hit.collider.GetComponent<Door>();
+					if(door != null && door.isLocked)
 					{
-						hit.collider.GetComponent<Door>().SendMessage("Locking", !hit.collider.GetComponent<Door>().isLocked);
+						_hackGame = (GameObject)Instantiate(hackGamePrefab);
+						_hackGame.GetComponent<HackGameController>().door = door;
 					}
-				}
+				}     
 			}
 		}
 

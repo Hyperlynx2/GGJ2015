@@ -6,6 +6,14 @@ using UnityEngine.UI;
 //this script determines what role you are and then sets up your mechanics accordingly
 public class GameManager : MonoBehaviour
 {
+
+	public static GameManager GetInstance()
+	{
+		return _instance;
+	}
+
+	private static GameManager _instance = null;
+
 	public bool OculusGame = false;
     public enum role
     {
@@ -28,9 +36,19 @@ public class GameManager : MonoBehaviour
 	public Text CurCamText;
 	public GameObject food;
 	public GameObject[] cutlery;
-    // Use this for initialization
+
+	/// <summary>
+	/// Things like the hack game can turn this off
+	/// </summary>
+	private bool _inputActive = true;
+    
+	// Use this for initialization
     void Start()
     {
+		_inputActive = true;
+
+		_instance = this;
+
         if (Network.isServer) //I'm the spy, spawn me.
         {
             myRole = role.spy;
@@ -88,21 +106,39 @@ public class GameManager : MonoBehaviour
         secCams[0].GetComponent<SecurityCameraMinimapDisplay>().SetMiniMapIconVisible(true);
     }
 
+	public void DisableInput()
+	{
+		_inputActive = false;
+	}
+
+	public void EnableInput()
+	{
+		_inputActive = true;
+	}
+
+	public bool InputIsActive()
+	{
+		return _inputActive;
+	}
+
     // Update is called once per frame
     void Update()
     {
-        //the mechanics methods are running out of the update function based on the role determined, so as not to bloat the update function.
-        //im a handler, these are my mechanics
-        if (myRole == role.handler)
-        {
-            HandlerMechanics();
-        }
+		if(_inputActive)
+		{
+	        //the mechanics methods are running out of the update function based on the role determined, so as not to bloat the update function.
+	        //im a handler, these are my mechanics
+	        if (myRole == role.handler)
+	        {
+	            HandlerMechanics();
+	        }
 
-        //im the spy, these are my mechanics
-        if (myRole == role.spy)
-        {
-            SpyMechanics();
-        }
+	        //im the spy, these are my mechanics
+	        if (myRole == role.spy)
+	        {
+	            SpyMechanics();
+	        }
+		}
     }
 
     //HACKER SECTION

@@ -3,3 +3,5 @@
 *.sln
 *.csproj
 /UtensilQuest/UtensilQuest.userprefs
+/UtensilQuest/Assembly-UnityScript-firstpass-vs.unityproj
+/UtensilQuest/Assembly-UnityScript-firstpass.unityproj

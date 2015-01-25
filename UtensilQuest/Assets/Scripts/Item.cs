@@ -27,6 +27,7 @@ public class Item : MonoBehaviour
 			this.renderer.enabled = false;
 			this.collider.enabled = false;
 			hit.GetComponentInChildren<AgentBehaviour>().SendMessage("UpdateImages");
+			audio.Play();
 		}
 	}
 }

@@ -7,7 +7,7 @@ public class SecurityCamera : MonoBehaviour
 {
     public float DownRotAngle = 25.0f;
     public float RotAngle = 90.0f; 
-	public float rotSpeed = 2.0f;
+	public float rotSpeed = 8.0f;
 	private float waitTimer = 0.0f;
 	public int waitFor = 1;
 
@@ -16,6 +16,9 @@ public class SecurityCamera : MonoBehaviour
     private Quaternion _leftRotDir = Quaternion.identity;
     private Quaternion _rightRotDir = Quaternion.identity;
 
+
+    private float rotTime = 0.0f;
+    private float rotRate = 0.0f;
 	public GameObject hackGamePrefab = null;
 
 	private GameObject _hackGame = null;
@@ -66,6 +69,10 @@ public class SecurityCamera : MonoBehaviour
 			}
 		}
 
+        rotRate = 1.0f / rotSpeed;
+        rotTime += Time.smoothDeltaTime * rotRate;
+
+		//I'm panning left
 		if(currentDirection == rotDirection.left)
         {
            if(Quaternion.Dot(transform.rotation, _leftRotDir) > 0.999)
@@ -73,13 +80,14 @@ public class SecurityCamera : MonoBehaviour
                 waitTimer += Time.smoothDeltaTime;
                 if (waitTimer >= waitFor)
                 {
+                    rotTime = 0.0f;
                     waitTimer = 0;
                     currentDirection = rotDirection.right;
                 }
             }
             else
             {
-                Quaternion rot = Quaternion.Slerp(transform.rotation, _leftRotDir, Time.deltaTime * rotSpeed);
+                Quaternion rot = Quaternion.Slerp(_rightRotDir, _leftRotDir, rotTime);
                 transform.rotation = rot;
             }
 			////transform.rotation.Set(transform.rotation.x, transform.rotation.y + (rotSpeed * Time.smoothDeltaTime), 0, transform.rotation.w);
@@ -105,13 +113,14 @@ public class SecurityCamera : MonoBehaviour
                 waitTimer += Time.smoothDeltaTime;
                 if (waitTimer >= waitFor)
                 {
+                    rotTime = 0.0f;
                     waitTimer = 0;
                     currentDirection = rotDirection.left;
                 }
             }
             else
             {
-                Quaternion rot = Quaternion.Slerp(transform.rotation, _rightRotDir, Time.deltaTime * rotSpeed);
+                Quaternion rot = Quaternion.Slerp(_leftRotDir, _rightRotDir, rotTime);
                 transform.rotation = rot;
             }
 			//transform.rotation.Set(transform.rotation.x, transform.rotation.y - (rotSpeed * Time.smoothDeltaTime), 0, transform.rotation.w);

@@ -77,7 +77,7 @@ public class SecurityCamera : MonoBehaviour
 		//I'm panning left
 		if(currentDirection == rotDirection.left)
         {
-           if(Quaternion.Dot(transform.rotation, _leftRotDir) > 0.999)
+           if(Quaternion.Dot(transform.rotation, _leftRotDir) > 0.99)
             {
                 waitTimer += Time.smoothDeltaTime;
                 if (waitTimer >= waitFor)
@@ -110,7 +110,7 @@ public class SecurityCamera : MonoBehaviour
 		//I'm panning right
 		if(currentDirection == rotDirection.right)
 		{
-            if (Quaternion.Dot(transform.rotation, _rightRotDir) > 0.999)
+            if (Quaternion.Dot(transform.rotation, _rightRotDir) > 0.99)
             {
                 waitTimer += Time.smoothDeltaTime;
                 if (waitTimer >= waitFor)

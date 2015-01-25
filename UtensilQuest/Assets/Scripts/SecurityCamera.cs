@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-//Controls the security camera, pans left and right with a delay and the ends.
+//Controls the security camera, pans left and right with a delay and then ends.
 public class SecurityCamera : MonoBehaviour 
 {
     public float DownRotAngle = 25.0f;
@@ -15,6 +15,10 @@ public class SecurityCamera : MonoBehaviour
 
     private Quaternion _leftRotDir = Quaternion.identity;
     private Quaternion _rightRotDir = Quaternion.identity;
+
+	public GameObject hackGamePrefab = null;
+
+	private GameObject _hackGame = null;
 
 	public enum rotDirection
 	{
@@ -52,14 +56,17 @@ public class SecurityCamera : MonoBehaviour
 				RaycastHit hit;
 				if(Physics.Raycast(ray, out hit))
 				{
-					if(hit.collider.GetComponent<Door>())
+					Door door = hit.collider.GetComponent<Door>();
+					if(door != null)
 					{
-						hit.collider.GetComponent<Door>().SendMessage("Locking", !hit.collider.GetComponent<Door>().isLocked);
+						_hackGame = (GameObject)Instantiate(hackGamePrefab);
+						_hackGame.GetComponent<HackGameController>().door = door;
+						//TODO: make sure that the hack game appropriately takes input focus
 					}
-				}
+				}     
 			}
 		}
-		//I'm panning left
+
 		if(currentDirection == rotDirection.left)
         {
            if(Quaternion.Dot(transform.rotation, _leftRotDir) > 0.999)

@@ -24,8 +24,14 @@ public class HackGameController : MonoBehaviour {
 
     private Button[] buttons;
 
+	/// <summary>
+	/// The door this hackgame is acting on.
+	/// </summary>
+	public Door door;
+
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         remainingTime = TotalTime;
         remainingPoints = RequiredPoints;
 
@@ -98,6 +104,7 @@ public class HackGameController : MonoBehaviour {
         bHackRunning = false;
         HackStatus.text = "Hack Succeeded!";
         HackStatus.color = Color.black;
+		door.Lock(false);
     }
 
     private void UpdateInfo()

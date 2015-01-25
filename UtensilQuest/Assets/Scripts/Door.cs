@@ -21,12 +21,12 @@ public class Door : MonoBehaviour
 			if(reLockTimer >= ReLockTime)
 			{
 				reLockTimer = 0;
-				Locking (true);
+				Lock(true);
 			}
 		}
 	}
 
-	void Locking(bool lockStatus)
+	public void Lock(bool lockStatus)
 	{
 		if(lockStatus == true)
 		{

@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 462254}
   - 114: {fileID: 11462254}
+  - 82: {fileID: 8298194}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -23,11 +24,69 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.12273788, y: .0961437225, z: -43.1114502}
+  m_LocalPosition: {x: 256, y: 0, z: -282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!82 &8298194
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162254}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: b7265be9e4d7675469b03c0e1ef3337e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .200000003
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 1000
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: .0186565537
+      outSlope: .0186565537
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11462254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,11 +124,11 @@ MonoBehaviour:
   FirstDigText: {fileID: 0}
   SecondDigText: {fileID: 0}
   CurCamText: {fileID: 0}
-  food: {fileID: 104914, guid: 864d4e772101b8d448e8e854da734907, type: 2}
+  food: {fileID: 132592, guid: 399dd3cfc2e09c74c8f3068a1ec3f232, type: 2}
   cutlery:
-  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
-  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
-  - {fileID: 144934, guid: 4514b759b07f81e4c807b9c5aab9de05, type: 2}
+  - {fileID: 141264, guid: d0133a97d5851614ab1ce8001737879f, type: 2}
+  - {fileID: 158378, guid: 2766bc8a983a9b14ea8e198492906224, type: 2}
+  - {fileID: 140436, guid: 0723843c7058f2641805fa70a4a71ca5, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

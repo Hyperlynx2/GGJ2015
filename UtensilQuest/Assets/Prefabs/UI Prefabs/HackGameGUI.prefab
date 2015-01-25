@@ -3800,7 +3800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameButtonNode: {fileID: 142414}
   TotalTime: 20
-  RequiredPoints: 10
+  RequiredPoints: 8
   BoardRandomizeTime: .600000024
   TimeRemainingText: {fileID: 11442358}
   PointsRemainingText: {fileID: 11442360}

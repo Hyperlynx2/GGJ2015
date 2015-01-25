@@ -32,11 +32,13 @@ public class Door : MonoBehaviour
 		{
 			isLocked = true;
 			transform.Translate(Vector3.down * 20);
+			audio.Play();
 		}
 		else
 		{
 			isLocked = false;
 			transform.Translate(Vector3.up * 20);
+			audio.Play();
 		}
 	}
 }

@@ -7,7 +7,7 @@ public class SecurityCamera : MonoBehaviour
 {
     public float DownRotAngle = 25.0f;
     public float RotAngle = 90.0f; 
-	public float rotSpeed = 2.0f;
+	public float rotSpeed = 8.0f;
 	private float waitTimer = 0.0f;
 	public int waitFor = 1;
 

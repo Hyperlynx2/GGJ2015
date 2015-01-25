@@ -137,6 +137,7 @@ public class Enemy : MonoBehaviour
 			theSpy.GetComponent<AgentBehaviour>().messageText.text = "BUSTED!";
 			//play a whistle,
 			theSpy.GetComponent<CharacterController>().enabled = false;
+			theSpy.GetComponent<AgentBehaviour>().reason = "You got caught!";
 			theSpy.GetComponent<AgentBehaviour>().Invoke("GameLose", 3.0f);
 			//condition to start patrolling again...
 			//currentSpeed = patrolSpeed;

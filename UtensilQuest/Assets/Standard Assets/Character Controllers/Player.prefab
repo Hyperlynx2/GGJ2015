@@ -331,15 +331,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   invIcons:
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  invGUI: []
+  invGUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   messageText: {fileID: 0}
+  timerText: {fileID: 0}
   currentSlot: 0
+  levelLength: 500
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

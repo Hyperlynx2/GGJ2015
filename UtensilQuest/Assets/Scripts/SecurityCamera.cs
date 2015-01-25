@@ -57,7 +57,7 @@ public class SecurityCamera : MonoBehaviour
 				if(Physics.Raycast(ray, out hit))
 				{
 					Door door = hit.collider.GetComponent<Door>();
-					if(door != null)
+					if(door != null && door.isLocked)
 					{
 						_hackGame = (GameObject)Instantiate(hackGamePrefab);
 						_hackGame.GetComponent<HackGameController>().door = door;

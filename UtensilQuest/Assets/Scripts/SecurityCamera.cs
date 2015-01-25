@@ -69,6 +69,8 @@ public class SecurityCamera : MonoBehaviour
 			}
 		}
 
+        //if (Network.isClient) return;
+
         rotRate = 1.0f / rotSpeed;
         rotTime += Time.smoothDeltaTime * rotRate;
 

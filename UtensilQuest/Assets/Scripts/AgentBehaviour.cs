@@ -13,9 +13,14 @@ public class AgentBehaviour : MonoBehaviour
 	private float levelTimer;
 	public int levelLength;
 	private int timerDis;
+	public string reason;
 	// Use this for initialization
 	void Start () 
 	{
+		if(!PlayerPrefs.HasKey("Reason"))
+		{
+			PlayerPrefs.SetString("Reason", "");
+		}
 		if(Network.isServer)
 		{
 			//get the amount of items in the 
@@ -45,6 +50,7 @@ public class AgentBehaviour : MonoBehaviour
 			{
 				messageText.text = "My food will be cold by now!";
 				GetComponent<CharacterController>().enabled = false;
+				reason = "You ran out of time!";
 				Invoke("GameLose", 3.0f);
 			}
 			else
@@ -64,11 +70,13 @@ public class AgentBehaviour : MonoBehaviour
 
 	void GameWin()
 	{
+		PlayerPrefs.SetString("Reason", reason);
 		Application.LoadLevel ("5 - EndGame");
 	}
 
 	void GameLose()
 	{
+		PlayerPrefs.SetString("Reason", reason);
 		Application.LoadLevel ("5 - EndGame");
 	}
 }

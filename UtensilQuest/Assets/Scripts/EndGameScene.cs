@@ -12,7 +12,7 @@ public class EndGameScene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.anyKeyDown)
+		if(Input.GetMouseButtonDown(0) || Input.anyKeyDown)
 		{
 			Application.LoadLevel(0);
 		}

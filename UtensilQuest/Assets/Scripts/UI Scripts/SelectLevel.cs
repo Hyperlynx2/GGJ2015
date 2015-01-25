@@ -12,7 +12,7 @@ public class SelectLevel : MonoBehaviour {
 
     public void OnLevelOneButtonClicked()
     {
-        PlayerPrefs.SetString("LEVEL_TO_LOAD", "4 - Level 1");
+        PlayerPrefs.SetString("LEVEL_TO_LOAD", "4 - UQ-LEVEL-001");
         Application.LoadLevel("3 - AgentLobby");
     }
 

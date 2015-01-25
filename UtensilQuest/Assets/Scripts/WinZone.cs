@@ -20,10 +20,11 @@ public class WinZone : MonoBehaviour
 	{
 		if (hit.name == "Player(Clone)") //The player is inside 
 		{
-			if(hit.GetComponent<AgentBehaviour>().currentSlot == hit.GetComponent<AgentBehaviour>().invGUI.Length-1)
+			if(hit.GetComponent<AgentBehaviour>().currentSlot == hit.GetComponent<AgentBehaviour>().invGUI.Length)
 			{
 				//WINRAR
 				hit.GetComponent<AgentBehaviour>().messageText.text = "NOMS!";
+				hit.GetComponent<AgentBehaviour>().reason = "You win! FOOOOD!";
 				hit.GetComponent<AgentBehaviour>().Invoke("GameWin", 3.0f);
 			}
 			else

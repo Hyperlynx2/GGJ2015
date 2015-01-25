@@ -89,10 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae87b6e03f89894d9a0b4922b945cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftCap: 8
-  rightCap: 85
+  DownRotAngle: 25
+  RotAngle: 90
   rotSpeed: 5
   waitFor: 1
+  hackGamePrefab: {fileID: 142406, guid: dd855970bc7fe6d48a6568d58e1f33aa, type: 2}
   currentDirection: 0
 --- !u!124 &12416054
 Behaviour:

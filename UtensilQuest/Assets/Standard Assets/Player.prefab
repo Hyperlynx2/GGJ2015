@@ -372,7 +372,8 @@ MonoBehaviour:
   messageText: {fileID: 0}
   timerText: {fileID: 0}
   currentSlot: 0
-  levelLength: 150
+  levelLength: 900
+  reason: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

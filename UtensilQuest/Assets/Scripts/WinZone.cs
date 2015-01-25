@@ -24,6 +24,7 @@ public class WinZone : MonoBehaviour
 			{
 				//WINRAR
 				hit.GetComponent<AgentBehaviour>().messageText.text = "NOMS!";
+				hit.GetComponent<AgentBehaviour>().reason = "You win! FOOOOD!";
 				hit.GetComponent<AgentBehaviour>().Invoke("GameWin", 3.0f);
 			}
 			else
